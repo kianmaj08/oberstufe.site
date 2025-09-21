@@ -208,9 +208,47 @@ html[data-theme="dark"] .to-top{ background:rgba(255,255,255,.18); box-shadow:0 
 .modal .status-item .status{ grid-column:1; grid-row:1 / span 2 }
 .modal .status-item .name{ grid-column:2; grid-row:1; font-weight:600 }
 .modal .status-item .desc{ grid-column:2; grid-row:2; color:var(--muted) }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* === Dark Mode refinements (v2.32) === */
 html[data-theme="dark"]{
@@ -262,7 +300,26 @@ html[data-theme="dark"] .subject-nav .chip.active{ background:rgba(139,92,246,.1
 html[data-theme="dark"] #scrollUpBtn,
 html[data-theme="dark"] .to-top{ background:#1F2937; color:#fff }
 html[data-theme="dark"] .feedback-btn{ background:#0F141E; border:1px solid var(--border); color:var(--link-strong) }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* === Dark Mode: deep navy + beige accents (v2.33) === */
 html[data-theme="dark"]{
@@ -341,7 +398,26 @@ html[data-theme="dark"] .qr-in-footer{ background:#121826; border:1px solid var(
 /* Scroll-to-top & Feedback */
 html[data-theme="dark"] .to-top{ background:#1C2436; color:#fff }
 html[data-theme="dark"] .feedback-btn{ background:#121826; border:1px solid var(--border); color:var(--link-strong) }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* === Dark Mode Palette (v2.34) === */
 html[data-theme="dark"] {
@@ -400,7 +476,26 @@ html[data-theme="dark"] .subject-nav .chip:hover { box-shadow: 0 8px 18px rgba(0
 /* Scroll-to-top & Feedback */
 html[data-theme="dark"] .to-top { background: var(--card); color: var(--text); border: 1px solid var(--border); }
 html[data-theme="dark"] .feedback-btn { background: var(--card); border: 1px solid var(--border); color: var(--link-strong); }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* v2.35 Dark Mode: Haupttitel in Anthrazit */
 html[data-theme="dark"] h1.site-title {
@@ -408,7 +503,26 @@ html[data-theme="dark"] h1.site-title {
   font-weight: 700;
   text-shadow: 0 1px 4px rgba(0,0,0,.7);
 }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* v2.39 Changelog styling */
 .changelog-list { list-style:none; margin:0; padding:0; }
@@ -418,7 +532,26 @@ html[data-theme="dark"] h1.site-title {
 .changelog-list li.feature { color:#22c55e; } /* Grün */
 .changelog-list li.bugfix  { color:#6b7280; } /* Grau */
 .changelog-list li.design  { color:#3b82f6; } /* Blau */
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* v2.40 Changelog unified styling + modal header */
 .changelog-list { list-style:none; margin:0; padding:0; }
@@ -437,11 +570,49 @@ html[data-theme="dark"] h1.site-title {
 /* Ensure close button aligns right even in existing markup */
 #modalChangelog .modal-header { display:flex; align-items:center; justify-content:space-between; }
 #modalChangelog .modal-header button { margin-left:auto; }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* v2.40: Titel Anthrazit global */
 h1.site-title { color:#393E46; }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* v2.41a: Dark title fix + changelog styles + feedback links */
 html[data-theme="dark"] h1.site-title,
@@ -459,7 +630,26 @@ html[data-theme="dark"] .title-anthrazit { color:#393E46 !important; }
 /* Feedback card links in blue */
 .feedback-card a { color:#3b82f6 !important; font-weight:600; }
 html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 <style>
 /* v2.42 Changelog color coding */
 #modalChangelog .changelog-list { list-style:none; margin:0; padding:0; }
@@ -469,7 +659,26 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 #modalChangelog .changelog-list li.feature { color:#22c55e; }  /* Grün */
 #modalChangelog .changelog-list li.bugfix  { color:#6b7280; }  /* Grau */
 #modalChangelog .changelog-list li.design  { color:#3b82f6; }  /* Blau */
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 
 <style>
 .card-grid{ display:grid;
@@ -542,7 +751,26 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
 .card .actions{ margin-top:12px }
 .btn.btn-primary{ display:inline-block; padding:8px 14px; border-radius:10px; background:#e6f0ff; border:1px solid #cfe0ff; text-decoration:none }
 .btn.btn-primary:hover{ filter:brightness(0.98) }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 
 </head>
 <body>
@@ -605,58 +833,54 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
     </div>
   </section>
 
-  <!-- Info Cards Section -->
+  <!-- Info Cards Section (exact like screenshot) -->
   <section class="section">
-    <div class="container">
-      <div class="info" style="background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow);">
+    <div class="container info-wrap">
+      <div class="info-card accent">
         <h3>Über dieses Projekt</h3>
-        <p>Diese Startseite bündelt unsere Q1‑Webprojekte. Ziel ist eine zentrale, saubere Übersicht mit Suchfunktion, Tags und konsistentem Design.</p>
-        <p>Karten werden über <strong>/admin</strong> gepflegt und automatisch im Grid angezeigt. Hosting: Netlify; Domain-Verwaltung via Squarespace.</p>
-        <p>Kontakt: <a class="link" href="mailto:oberstufesite@gmail.com">oberstufesite@gmail.com</a></p>
+        <p>Dieses Projekt entstand im Rahmen unserer schulischen Arbeiten. Wir experimentieren mit künstlicher Intelligenz, entwickeln Präsentationen und erstellen Websites, die wir hier auf oberstufe.site veröffentlichen.</p>
+        <p>Unsere Seiten werden mit Hilfe von <a class="link" href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> gehostet, während die Domain über <a class="link" href="https://www.squarespace.com/" target="_blank" rel="noopener">Squarespace</a> verwaltet wird.</p>
+        <p>Bitte beachten Sie: Die Websites sind noch nicht vollendet. Inhalte und Gestaltung können sich jederzeit ändern.</p>
+        <p>Bei Fragen oder Ideen können Sie uns gerne unter <a class="link" href="mailto:oberstufesite@gmail.com">oberstufesite@gmail.com</a> erreichen.</p>
       </div>
 
-      <div class="improvements" style="margin-top:16px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;">
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow);">
+      <div class="info-grid" style="margin-top:12px;">
+        <div class="info-card accent">
           <h3>Geplante Verbesserungen</h3>
           <ul>
-            <li><strong>Sortierung</strong>: Standard, A–Z, Neueste pro Tag.</li>
-            <li><strong>Suche</strong>: Schnelleres Indexing der Karten.</li>
-            <li><strong>Design</strong>: Kleinere Animationen & Fokuszustände.</li>
+            <li><strong>Optimierungen der Homepage</strong> – Verbesserung von Struktur, Design und Benutzerfreundlichkeit.</li>
+            <li><strong>Integration von Bildern</strong> – Ergänzung passender Abbildungen sowohl auf der Philexikon‑Seite als auch auf der Pieter‑Bruegel‑Seite.</li>
           </ul>
         </div>
-        <div style="background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow);">
+        <div class="info-card accent">
           <h3>Status & Transparenz</h3>
-          <p>„In Arbeit“ kennzeichnet aktive Projekte. „Test“ sind Versuchs-Seiten. „Coming Soon“ ist reserviert für geplante Inhalte.</p>
-          <ul class="status-list" style="list-style:none; padding:0; margin:12px 0 0 0; display:grid; grid-template-columns:1fr; gap:10px">
-            <li class="status-item" style="display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:2px; align-items:center">
-              <span class="badge badge-done">Fertig</span><span class="name">Fertig</span><span class="desc">Abgeschlossen und öffentlich.</span>
-            </li>
-            <li class="status-item" style="display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:2px; align-items:center">
-              <span class="badge badge-wip">In Arbeit</span><span class="name">In Arbeit</span><span class="desc">Wird aktiv erweitert.</span>
-            </li>
-            <li class="status-item" style="display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:2px; align-items:center">
-              <span class="badge badge-test">Test</span><span class="name">Test</span><span class="desc">Experimentelle Seite.</span>
-            </li>
-            <li class="status-item" style="display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:2px; align-items:center">
-              <span class="badge badge-soon">Coming Soon</span><span class="name">Coming Soon</span><span class="desc">Geplant, noch ohne Inhalt.</span>
-            </li>
-          </ul>
+          <p>„In Arbeit“ kennzeichnet aktive Projekte. „Test“ sind Versuchs‑Seiten. „Coming Soon“ ist für geplante Inhalte reserviert.</p>
         </div>
       </div>
 
-      <div class="faq" style="margin-top:16px; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow);">
+      <div class="info-card accent" style="margin-top:12px;">
         <h3>FAQ</h3>
-        <div class="faq-item" style="margin:12px 0;">
-          <strong>Wie füge ich eine neue Website hinzu?</strong>
-          <p>Über <em>/admin</em> → Sammlung „Cards“ → Eintrag erstellen (Typ „website“). Nach dem Speichern erscheint sie automatisch im Grid.</p>
-        </div>
-        <div class="faq-item" style="margin:12px 0;">
-          <strong>Warum sehe ich die Seite 2×?</strong>
-          <p>Falls Duplikate auftauchen, gibt es meist eine zweite Render‑Section. Diese Version entfernt sie vollständig.</p>
-        </div>
-        <div class="faq-item" style="margin:12px 0;">
-          <strong>Wie funktionieren Tags & Badges?</strong>
-          <p>Tags setzen die Akzentfarbe oben an der Karte. Der Badge zeigt den Projekt‑Status.</p>
+        <div class="faq-list">
+          <div class="faq-item">
+            <strong>Was ist oberstufe.site?</strong>
+            <p>oberstufe.site ist unsere zentrale Startseite, die alle Schülerprojekte bündelt.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Warum gibt es mehrere Websites?</strong>
+            <p>Jedes Projekt hat ein eigenes Thema (z.&thinsp;B. <span class="kw-philosophie">Philosophie</span>, <span class="kw-kunst">Kunst</span>, <span class="kw-geschichte">Geschichte</span>) und wird deshalb auf einer eigenen Website präsentiert.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Sind die Inhalte schon final?</strong>
+            <p>Nein – alle Projekte sind noch in Arbeit. Inhalte und Design können sich jederzeit ändern.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Wie werden die Seiten betrieben?</strong>
+            <p>Unsere Websites laufen über Netlify, die Domain wird über Squarespace verwaltet.</p>
+          </div>
+          <div class="faq-item">
+            <strong>Kann ich Feedback geben oder Ideen einreichen?</strong>
+            <p>Ja, gerne per E‑Mail an <a class="link" href="mailto:oberstufesite@gmail.com">oberstufesite@gmail.com</a>.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -884,7 +1108,26 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
 <style>
   .admin-only{ display:none }
   .admin-yes .admin-only{ display:initial }
-</style>
+
+/* v2.43 info cards exact style */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:18px; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.info-card.accent{ position:relative; }
+.info-card.accent::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:4px; background:#3B82F6; border-top-left-radius:12px; border-bottom-left-radius:12px; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box-shadow:0 8px 18px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        </style>
+        
 
 
 
