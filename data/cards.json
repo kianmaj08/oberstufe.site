@@ -6,7 +6,7 @@
       "url": "google.com",
       "subtitle": "dies ist eine test website",
       "title": "Testwebsite",
-      "is_published": true,
+      "is_published": false,
       "type": "website",
       "tag": "philosophie",
       "id": "testkian"
