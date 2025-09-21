@@ -587,6 +587,25 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 #modalChangelog .changelog-list li.bugfix  { color:#6b7280; }  /* Grau */
 #modalChangelog .changelog-list li.design  { color:#3b82f6; }  /* Blau */
 </style>
+
+<style>
+/* kleine runde Thumbnails */
+.card-thumb{ width:64px; height:64px; object-fit:cover; border-radius:12px; display:block; margin:6px 0 }
+/* CTA Button */
+.card .actions{ margin-top:12px }
+.btn.btn-primary{ display:inline-block; padding:8px 14px; border-radius:10px; background:#e6f0ff; border:1px solid #cfe0ff; text-decoration:none }
+.btn.btn-primary:hover{ filter:brightness(0.98) }
+/* Status-Badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.75rem;margin-left:6px}
+.badge-done{background:#22c55e20;color:#16a34a;border:1px solid #16a34a33}
+.badge-wip{background:#f59e0b20;color:#d97706;border:1px solid #d9770633}
+.badge-test{background:#6b728020;color:#374151;border:1px solid #37415133}
+.badge-soon{background:#ef444420;color:#b91c1c;border:1px solid #b91c1c33}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;opacity:.85}
+/* Header-Brand zurück auf normal (nicht fetter als früher) */
+header .brand, header .logo, header .site-name, .nav .brand a { font-weight:600 !important; letter-spacing:-0.01em; font-family:inherit; }
+</style>
+
 </head>
 <body>
 
@@ -644,6 +663,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="physik" class="subject container">
     <h2 data-i18n="pp_nav_physik">Physik</h2>
+<div class="card-grid two-cols" data-tag="physik"></div>
+
     <p class="sub" data-i18n="sec_physik">Präsentationen aus dem Physikunterricht</p>
     <div class="grid">
       <article class="card card--physik">
@@ -667,6 +688,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="philosophie" class="subject container">
     <h2 data-i18n="pp_nav_phil">Philosophie</h2>
+<div class="card-grid two-cols" data-tag="philosophie"></div>
+
     <p class="sub" data-i18n="sec_phil">Philosophie-Themen und Denkmodelle</p>
     <div class="grid">
       <article class="card card--philosophie">
@@ -690,6 +713,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="erdkunde" class="subject container">
     <h2 data-i18n="pp_nav_geo">Erdkunde</h2>
+<div class="card-grid two-cols" data-tag="erdkunde"></div>
+
     <p class="sub" data-i18n="sec_geo">Geographie & Umwelt</p>
     <div class="grid">
       <article class="card card--erdkunde">
@@ -713,6 +738,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="geschichte" class="subject container">
     <h2 data-i18n="pp_nav_hist">Geschichte</h2>
+<div class="card-grid two-cols" data-tag="geschichte"></div>
+
     <p class="sub" data-i18n="sec_hist">Historische Themen</p>
     <div class="grid">
       <article class="card card--geschichte">
@@ -728,6 +755,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="sowi" class="subject container">
     <h2 data-i18n="pp_nav_sowi">SoWi</h2>
+<div class="card-grid two-cols" data-tag="sowi"></div>
+
     <p class="sub" data-i18n="sec_sowi">Sozialwissenschaften & Politik</p>
     <div class="grid">
       <article class="card card--sowi">
@@ -743,6 +772,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="mathe" class="subject container">
     <h2 data-i18n="pp_nav_math">Mathe</h2>
+<div class="card-grid two-cols" data-tag="mathe"></div>
+
     <p class="sub" data-i18n="sec_math">Mathematik – Material folgt</p>
     <div class="grid">
       <article class="card">
@@ -756,6 +787,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="deutsch" class="subject container">
     <h2 data-i18n="pp_nav_de">Deutsch</h2>
+<div class="card-grid two-cols" data-tag="deutsch"></div>
+
     <p class="sub" data-i18n="sec_de">Deutsch – Material folgt</p>
     <div class="grid">
       <article class="card">
@@ -769,6 +802,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="sport" class="subject container">
     <h2 data-i18n="pp_nav_sp">Sport</h2>
+<div class="card-grid two-cols" data-tag="sport"></div>
+
     <p class="sub" data-i18n="sec_sp">Sport – Material folgt</p>
     <div class="grid">
       <article class="card">
@@ -782,6 +817,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="chemie" class="subject container">
     <h2 data-i18n="pp_nav_ch">Chemie</h2>
+<div class="card-grid two-cols" data-tag="chemie"></div>
+
     <p class="sub" data-i18n="sec_ch">Chemie – Material folgt</p>
     <div class="grid">
       <article class="card">
@@ -795,6 +832,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 
   <section id="informatik" class="subject container">
     <h2 data-i18n="pp_nav_inf">Informatik</h2>
+<div class="card-grid two-cols" data-tag="informatik"></div>
+
     <p class="sub" data-i18n="sec_inf">Informatik – Material folgt</p>
     <div class="grid">
       <article class="card">
@@ -1488,6 +1527,60 @@ document.addEventListener('DOMContentLoaded', function(){
     const cards = await loadCards();
     if(/powerpoints/i.test(location.pathname)) injectPresentations(cards);
     else injectWebsites(cards);
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  function badgeHTML(status){
+    const map = {
+      fertig:['Fertig','badge-done'],
+      in_arbeit:['In Arbeit','badge-wip'],
+      test:['Test','badge-test'],
+      coming_soon:['Coming Soon','badge-soon']
+    };
+    const x = map[status]; return x ? `<span class="badge ${x[1]}">${x[0]}</span>` : '';
+  }
+  function cardHTML(c){
+    return `<div class="card">
+      ${c.image_url ? `<img class="card-thumb" src="${c.image_url}" alt="">` : ''}
+      <h3>${c.title||''}</h3>
+      ${c.subtitle ? `<p class="muted">${c.subtitle}</p>` : ''}
+      <div class="meta">
+        <span class="tag ${c.tag||''}">${c.tag||''}</span>
+        <span class="type">${c.type||''}</span>
+        ${badgeHTML(c.status)}
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a>
+      </div>
+    </div>`;
+  }
+  async function loadCards(){
+    const r = await fetch('/data/cards.json', {cache:'no-cache'});
+    const d = await r.json();
+    return (d.cards||[]).filter(c => c.is_published !== false);
+  }
+  function renderWebsites(cards){
+    const grid = document.getElementById('websitesGrid');
+    if(!grid) return;
+    const webs = cards.filter(c => c.type==='website');
+    grid.innerHTML = webs.map(cardHTML).join('');
+  }
+  function renderPresentations(cards){
+    const all = cards.filter(c => c.type==='presentation');
+    document.querySelectorAll('[data-tag]').forEach(grid=>{
+      const tag = (grid.getAttribute('data-tag')||'').toLowerCase();
+      const list = all.filter(c => (c.tag||'').toLowerCase()===tag);
+      grid.innerHTML = list.map(cardHTML).join('');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', async () => {
+    const cards = await loadCards();
+    if(/powerpoints/i.test(location.pathname)) renderPresentations(cards);
+    else renderWebsites(cards);
   });
 })();
 </script>

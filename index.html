@@ -485,6 +485,25 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 .card-grid, .cards, .grid { grid-auto-flow: row dense; }
 </style>
 
+
+<style>
+/* kleine runde Thumbnails */
+.card-thumb{ width:64px; height:64px; object-fit:cover; border-radius:12px; display:block; margin:6px 0 }
+/* CTA Button */
+.card .actions{ margin-top:12px }
+.btn.btn-primary{ display:inline-block; padding:8px 14px; border-radius:10px; background:#e6f0ff; border:1px solid #cfe0ff; text-decoration:none }
+.btn.btn-primary:hover{ filter:brightness(0.98) }
+/* Status-Badges */
+.badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.75rem;margin-left:6px}
+.badge-done{background:#22c55e20;color:#16a34a;border:1px solid #16a34a33}
+.badge-wip{background:#f59e0b20;color:#d97706;border:1px solid #d9770633}
+.badge-test{background:#6b728020;color:#374151;border:1px solid #37415133}
+.badge-soon{background:#ef444420;color:#b91c1c;border:1px solid #b91c1c33}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;opacity:.85}
+/* Header-Brand zurück auf normal (nicht fetter als früher) */
+header .brand, header .logo, header .site-name, .nav .brand a { font-weight:600 !important; letter-spacing:-0.01em; font-family:inherit; }
+</style>
+
 </head>
 <body>
 
@@ -533,6 +552,8 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
     <div class="container">
       <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
         <h2 data-i18n="grid_title">Unsere Websites</h2>
+<div id="websitesGrid" class="card-grid two-cols"></div>
+
         <div>
           <label for="sortSelect" style="font-size:.9rem; color:var(--muted); margin-right:6px;" data-i18n="sort_label">Sortieren:</label>
           <select id="sortSelect" style="padding:8px 10px; border:1px solid var(--border); border-radius:8px; background:var(--card); color:var(--text);">
@@ -1300,6 +1321,60 @@ document.addEventListener('DOMContentLoaded', function(){
     const cards = await loadCards();
     if(/powerpoints/i.test(location.pathname)) injectPresentations(cards);
     else injectWebsites(cards);
+  });
+})();
+</script>
+
+
+<script>
+(function(){
+  function badgeHTML(status){
+    const map = {
+      fertig:['Fertig','badge-done'],
+      in_arbeit:['In Arbeit','badge-wip'],
+      test:['Test','badge-test'],
+      coming_soon:['Coming Soon','badge-soon']
+    };
+    const x = map[status]; return x ? `<span class="badge ${x[1]}">${x[0]}</span>` : '';
+  }
+  function cardHTML(c){
+    return `<div class="card">
+      ${c.image_url ? `<img class="card-thumb" src="${c.image_url}" alt="">` : ''}
+      <h3>${c.title||''}</h3>
+      ${c.subtitle ? `<p class="muted">${c.subtitle}</p>` : ''}
+      <div class="meta">
+        <span class="tag ${c.tag||''}">${c.tag||''}</span>
+        <span class="type">${c.type||''}</span>
+        ${badgeHTML(c.status)}
+      </div>
+      <div class="actions">
+        <a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a>
+      </div>
+    </div>`;
+  }
+  async function loadCards(){
+    const r = await fetch('/data/cards.json', {cache:'no-cache'});
+    const d = await r.json();
+    return (d.cards||[]).filter(c => c.is_published !== false);
+  }
+  function renderWebsites(cards){
+    const grid = document.getElementById('websitesGrid');
+    if(!grid) return;
+    const webs = cards.filter(c => c.type==='website');
+    grid.innerHTML = webs.map(cardHTML).join('');
+  }
+  function renderPresentations(cards){
+    const all = cards.filter(c => c.type==='presentation');
+    document.querySelectorAll('[data-tag]').forEach(grid=>{
+      const tag = (grid.getAttribute('data-tag')||'').toLowerCase();
+      const list = all.filter(c => (c.tag||'').toLowerCase()===tag);
+      grid.innerHTML = list.map(cardHTML).join('');
+    });
+  }
+  document.addEventListener('DOMContentLoaded', async () => {
+    const cards = await loadCards();
+    if(/powerpoints/i.test(location.pathname)) renderPresentations(cards);
+    else renderWebsites(cards);
   });
 })();
 </script>
