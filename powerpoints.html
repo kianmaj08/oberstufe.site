@@ -1355,7 +1355,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </script>
 
 
-<!-- Netlify Identity -->
+<!-- Netlify Identity (login status only) -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 (function(){
@@ -1376,44 +1376,35 @@ document.addEventListener('DOMContentLoaded', function(){
 <style>
   .admin-only{ display:none }
   .admin-yes .admin-only{ display:initial }
-  .admin-fab{ position:fixed; bottom:20px; right:20px; z-index:9999; 
-    width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    background:#22c55e; color:#0b0e14; font-size:28px; font-weight:700; border:0; box-shadow:0 10px 22px rgba(0,0,0,.25); cursor:pointer }
-  .admin-fab:hover{ transform: translateY(-2px) }
-  .card .edit-pen{ position:absolute; top:8px; right:8px; background:#3b82f6; color:#fff; border-radius:10px; padding:4px 6px; font-size:12px; }
-  .card{ position:relative }
 </style>
-<!-- Floating Add (+) button -->
-<a class="admin-only admin-fab" href="/admin/#/collections/cards/entries" title="Karte hinzufügen">+</a>
 
-<div id="cardsGrid" class="card-grid"></div>
+<div id="cardsPresGrid" class="card-grid two-cols"></div>
 
 <script>
 (async function(){
   try{
-    const res = await fetch('/data/cards.json', {cache: 'no-cache'});
+    const res = await fetch('/data/cards.json', {cache:'no-cache'});
     const data = await res.json();
-    const cards = (data.cards || []).filter(c => c.is_published !== false);
-    const grid = document.getElementById('cardsGrid');
-    if(!grid) return;
-    grid.innerHTML = cards.map(c => `
-      <a class="card card--${c.tag || 'default'}" href="${c.url}" target="_blank" rel="noopener">
+    const list = (data.cards||[]).filter(c => (c.is_published !== false) && (c.type === 'presentation'));
+    const el = document.getElementById('cardsPresGrid');
+    if(!el) return;
+    el.innerHTML = list.map(c => `
+      <a class="card card--${c.tag||'default'}" href="${c.url}" target="_blank" rel="noopener">
         ${c.image_url ? `<img class="card-thumb" src="${c.image_url}" alt="">` : ''}
         <h3>${c.title}</h3>
         ${c.subtitle ? `<p class="muted">${c.subtitle}</p>` : ''}
-        <div class="meta"><span class="tag ${c.tag || ''}">${c.tag || ''}</span><span class="type">${c.type || ''}</span></div>
-        <span class="edit-pen admin-only">✎</span>
+        <div class="meta"><span class="tag ${c.tag||''}">${c.tag||''}</span><span class="type">${c.type||''}</span></div>
       </a>
     `).join('');
-  }catch(e){
-    console.error('Cards laden fehlgeschlagen', e);
-  }
+  }catch(e){ console.error('cards load error', e); }
 })();
 </script>
+
 <style>
-  .card-grid { display:grid; gap:16px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
-  .card-thumb { width:100%; height:140px; object-fit:cover; border-radius:12px; }
-  .meta { display:flex; gap:8px; margin-top:8px; font-size:.9rem; opacity:.8 }
+.card-grid.two-cols{ display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:16px }
+@media (max-width: 640px){ .card-grid.two-cols{ grid-template-columns: 1fr } }
+.card-thumb{ width:100%; height:140px; object-fit:cover; border-radius:12px }
+.meta{ display:flex; gap:8px; margin-top:8px; font-size:.9rem; opacity:.8 }
 </style>
 
 </body>

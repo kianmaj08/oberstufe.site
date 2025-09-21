@@ -1152,7 +1152,7 @@ const langDe=document.getElementById('langDe'); const langEn=document.getElement
 </script>
 
 
-<!-- Netlify Identity -->
+<!-- Netlify Identity (login status only) -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
 (function(){
@@ -1173,15 +1173,7 @@ const langDe=document.getElementById('langDe'); const langEn=document.getElement
 <style>
   .admin-only{ display:none }
   .admin-yes .admin-only{ display:initial }
-  .admin-fab{ position:fixed; bottom:20px; right:20px; z-index:9999; 
-    width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center;
-    background:#22c55e; color:#0b0e14; font-size:28px; font-weight:700; border:0; box-shadow:0 10px 22px rgba(0,0,0,.25); cursor:pointer }
-  .admin-fab:hover{ transform: translateY(-2px) }
-  .card .edit-pen{ position:absolute; top:8px; right:8px; background:#3b82f6; color:#fff; border-radius:10px; padding:4px 6px; font-size:12px; }
-  .card{ position:relative }
 </style>
-<!-- Floating Add (+) button -->
-<a class="admin-only admin-fab" href="/admin/#/collections/cards/entries" title="Karte hinzufügen">+</a>
 
 </body>
 </html>
