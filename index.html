@@ -1685,5 +1685,46 @@ function badgeHTML(status){
 })();
 </script>
 
+
+<script>
+/* v2.59 – Hamburger Menü (neu codiert) */
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
+  if(!btn || !list) return;
+
+  function openMenu(){
+    list.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+  }
+  function closeMenu(){
+    list.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+  function toggleMenu(){ list.classList.contains('open') ? closeMenu() : openMenu(); }
+
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggleMenu(); });
+  document.addEventListener('click', (e)=>{ if(!list.contains(e.target) && !btn.contains(e.target)) closeMenu(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
+
+  function openModalById(id){
+    const m = document.getElementById(id);
+    if(!m) return;
+    m.classList.add('open');
+    if(overlay) overlay.classList.add('show');
+    closeMenu();
+  }
+
+  list.querySelectorAll('[data-modal]').forEach(a=>{
+    a.addEventListener('click', (e)=>{ e.preventDefault(); openModalById(a.getAttribute('data-modal')); });
+  });
+
+  window._openModal = window._openModal || openModalById;
+})();
+</script>
+
 </body>
 </html>
