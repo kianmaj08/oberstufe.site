@@ -1,15 +1,25 @@
 {
   "cards": [
     {
-      "id": "example-1",
-      "title": "Beispielkarte",
-      "subtitle": "Untertitel",
+      "created_at": "2025-09-21T10:00:00Z",
+      "image_url": "",
       "url": "https://example.com",
+      "subtitle": "Untertitel",
+      "title": "Beispielkarte",
+      "is_published": true,
       "type": "website",
       "tag": "geschichte",
-      "image_url": "",
+      "id": "example-1"
+    },
+    {
+      "type": "website",
       "is_published": true,
-      "created_at": "2025-09-21T10:00:00Z"
+      "id": "testwebsite",
+      "title": "Testwebsite123",
+      "subtitle": "test187",
+      "url": "wikipedia.de",
+      "tag": "physik",
+      "created_at": "2025-09-21T17:04:00+02:00"
     }
   ]
 }
