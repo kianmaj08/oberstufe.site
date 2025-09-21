@@ -226,7 +226,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 
@@ -247,7 +267,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* === Dark Mode refinements (v2.32) === */
@@ -318,7 +358,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* === Dark Mode: deep navy + beige accents (v2.33) === */
@@ -416,7 +476,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* === Dark Mode Palette (v2.34) === */
@@ -494,7 +574,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* v2.35 Dark Mode: Haupttitel in Anthrazit */
@@ -521,7 +621,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* v2.39 Changelog styling */
@@ -550,7 +670,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* v2.40 Changelog unified styling + modal header */
@@ -588,7 +728,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* v2.40: Titel Anthrazit global */
@@ -611,7 +771,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* v2.41a: Dark title fix + changelog styles + feedback links */
@@ -648,7 +828,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 <style>
 /* v2.42 Changelog color coding */
@@ -677,7 +877,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 
 <style>
@@ -769,7 +989,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 
 </head>
@@ -1126,7 +1366,27 @@ html[data-theme="dark"] .faq-item{ background:#222831; border-color:#393E46; box
 .faq-item strong{ display:block; margin-bottom:6px; }
 /* keep section narrow */
 .info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
+        
+/* v2.44 info polish */
+.info-wrap{ max-width:980px; margin:0 auto; }
+.info-card{ position:relative; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:14px; box-shadow:0 10px 24px rgba(0,0,0,.07); padding:18px; overflow:hidden; }
+html[data-theme="dark"] .info-card{ background:#222831; border-color:#393E46; box-shadow:0 10px 28px rgba(0,0,0,.35); }
+.info-card.accent::before{ content:""; position:absolute; left:-2px; top:-2px; bottom:-2px; width:6px; background:#3B82F6; border-top-left-radius:16px; border-bottom-left-radius:16px; box-shadow:0 0 0 2px #3B82F6; }
+.info-card h3{ margin:0 0 8px 0; color:#2563EB; font-size:1.05rem; }
+.info-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .info-grid{ grid-template-columns:1fr 1fr; } }
+.info-card ul{ margin:6px 0 0 18px; }
+.info-card p{ margin:0 0 8px 0; }
+
+/* FAQ cards: no border, soft shadow, rounded */
+.faq-list{ display:grid; gap:10px; }
+.faq-item{ background:var(--card,#fff); border:none; border-radius:14px; box-shadow:0 8px 18px rgba(0,0,0,.06); padding:14px 16px; }
+html[data-theme="dark"] .faq-item{ background:#222831; border:none; box-shadow:0 8px 24px rgba(0,0,0,.35); }
+.faq-item strong{ display:block; margin-bottom:6px; }
+/* keep section narrow */
+.info, .improvements, .faq, .info-wrap{ max-width:980px; margin:0 auto }
         </style>
+        
         
 
 
