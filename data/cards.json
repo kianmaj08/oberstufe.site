@@ -1,38 +1,3 @@
 {
-  "cards": [
-    {
-      "authors": "Ein Projekt von Kian, Basit und Kamil.",
-      "created_at": "",
-      "url": "https://philexikon.netlify.app/",
-      "status": "in_arbeit",
-      "subtitle": "Ein Lexikon für bekannte Philosophen",
-      "title": "Philexikon",
-      "is_published": true,
-      "type": "website",
-      "tag": "philosophie",
-      "id": "philexikon"
-    },
-    {
-      "authors": "Ein Projekt von Kian, Basit und Mark",
-      "url": "https://pieterbruegel.netlify.app/",
-      "status": "in_arbeit",
-      "subtitle": "Biografie, Kunstwerke und Hintergründe des Renaissance- Künstlers",
-      "title": "Pieter Bruegel",
-      "is_published": true,
-      "type": "website",
-      "tag": "kunst",
-      "id": "pieterbruegel"
-    },
-    {
-      "authors": "Ein Projekt von Kian, Till, Mark und Danush",
-      "url": "https://wienerkongress.netlify.app/",
-      "status": "in_arbeit",
-      "subtitle": "Ein kurzer Überblick zum Wiener Kongress",
-      "title": "Wiener Kongress",
-      "is_published": true,
-      "type": "website",
-      "tag": "geschichte",
-      "id": "wienerkongress"
-    }
-  ]
+  "cards": []
 }

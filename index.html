@@ -1572,7 +1572,7 @@ function badgeHTML(status){
     return `<div class="card card--${tag}">
       ${c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:''}
       <h3>${c.title||''}</h3>
-      \1
+      ${c.subtitle?`<p class="muted">${c.subtitle}</p>`:''}
       ${c.authors?`<p class="muted" style="font-size:.9rem; opacity:.85">${c.authors}</p>`:\'\'}
       <div class="row-tags"><div class="left">${tagPill(tag)}</div></div>
       <div class="actions"><a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a>${statusBtnHTML(c.status)}</div>
@@ -1585,14 +1585,22 @@ function badgeHTML(status){
   function renderWebsites(cards){
     const grid=document.getElementById('websitesGrid'); if(!grid) return;
     const webs=cards.filter(c=>(c.type||'')==='website');
-    grid.innerHTML = webs.map(cardHTML).join('');
+    if(webs.length===0){
+      grid.innerHTML = `<div class="empty" style="padding:28px; text-align:center; color:var(--muted); border:1px dashed var(--border); border-radius:14px;">Noch keine Karten vorhanden.</div>`;
+    } else {
+      grid.innerHTML = webs.map(cardHTML).join('');
+    }
   }
   function renderPresentations(cards){
     const pres=cards.filter(c=>(c.type||'')==='presentation');
     document.querySelectorAll('[data-tag]').forEach(grid=>{
       const tag=(grid.getAttribute('data-tag')||'').toLowerCase();
       const items=pres.filter(c=>(c.tag||'').toLowerCase()===tag);
-      grid.innerHTML = items.map(cardHTML).join('');
+      if(items.length===0){
+        grid.innerHTML = `<div class="empty" style="padding:18px; text-align:center; color:var(--muted); border:1px dashed var(--border); border-radius:12px;">Noch keine Präsentationen</div>`;
+      } else {
+        grid.innerHTML = items.map(cardHTML).join('');
+      }
     });
   }
   document.addEventListener('DOMContentLoaded', async ()=>{

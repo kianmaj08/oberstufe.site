@@ -1166,7 +1166,7 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
     return `<div class="card card--${tag}">
       ${c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:''}
       <h3>${c.title||''}</h3>
-      \1
+      ${c.subtitle?`<p class="muted">${c.subtitle}</p>`:''}
       ${c.authors?`<p class="muted" style="font-size:.9rem; opacity:.85">${c.authors}</p>`:\'\'}
       <div class="row-tags"><div class="left">${tagPill(tag)}</div><div class="right"></div></div>
       <div class="actions"><a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a></div>
