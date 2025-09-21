@@ -827,7 +827,9 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
     <div class="modal-header">
       <h3 id="settingsTitle" data-i18n="settings_title">Einstellungen</h3>
       <button id="closeSettings" class="btn">Schließen</button>
-    </div>
+    
+<ul><li><a href="/admin">Admin Login</a></li></ul>
+</div>
     <div class="modal-body">
       <div class="row-setting">
         <span data-i18n="set_theme">Theme</span>
@@ -1406,6 +1408,89 @@ document.addEventListener('DOMContentLoaded', function(){
 .card-thumb{ width:100%; height:140px; object-fit:cover; border-radius:12px }
 .meta{ display:flex; gap:8px; margin-top:8px; font-size:.9rem; opacity:.8 }
 </style>
+
+
+<script>
+(function(){
+  const TAG_TO_HEADING = {
+    philosophie:'Philosophie', erdkunde:'Erdkunde', geschichte:'Geschichte',
+    physik:'Physik', sowi:'SoWi', deutsch:'Deutsch', sport:'Sport',
+    mathe:'Mathe', chemie:'Chemie', informatik:'Informatik'
+  };
+
+  function badgeHTML(status){
+    const map = {
+      fertig:{txt:'Fertig',cls:'badge-done'},
+      in_arbeit:{txt:'In Arbeit',cls:'badge-wip'},
+      test:{txt:'Test',cls:'badge-test'},
+      coming_soon:{txt:'Coming Soon',cls:'badge-soon'}
+    };
+    const b = map[status]; return b?`<span class="badge ${b.cls}">${b.txt}</span>`:'';
+  }
+
+  function cardHTML(c){
+    return `<a class="card card--${c.tag||'default'}" href="${c.url}" target="_blank" rel="noopener">
+      ${c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:''}
+      <h3>${c.title||''}</h3>
+      ${c.subtitle?`<p class="muted">${c.subtitle}</p>`:''}
+      <div class="meta"><span class="tag ${c.tag||''}">${c.tag||''}</span><span class="type">${c.type||''}</span>${badgeHTML(c.status)}</div>
+    </a>`;
+  }
+
+  async function loadCards(){
+    try{
+      const r = await fetch('/data/cards.json', {cache:'no-cache'});
+      const d = await r.json();
+      return (d.cards||[]).filter(c => c.is_published !== false);
+    }catch(e){ console.error(e); return []; }
+  }
+
+  function appendIntoGridNear(headingRegex, items){
+    if(!items.length) return;
+    const hs = Array.from(document.querySelectorAll('h1,h2,h3'));
+    const h = hs.find(el => headingRegex.test((el.textContent||'').trim()));
+    if(!h) return;
+    // finde nächstes Grid unterm Heading
+    let parent = h.parentElement; let grid=null;
+    for(let i=0;i<6 && parent;i++){
+      grid = parent.querySelector('.card-grid, .cards, .grid, [class*="grid"]');
+      if(grid) break; parent = parent.nextElementSibling;
+    }
+    if(!grid) return;
+    const wrap = document.createElement('div'); wrap.innerHTML = items.map(cardHTML).join('');
+    Array.from(wrap.children).forEach(ch => grid.appendChild(ch));
+  }
+
+  function injectWebsites(all){
+    const webs = all.filter(c => c.type==='website');
+    appendIntoGridNear(/unsere websites/i, webs);
+  }
+
+  function injectPresentations(all){
+    const pres = all.filter(c => c.type==='presentation');
+    Object.entries(TAG_TO_HEADING).forEach(([tag, title]) => {
+      const items = pres.filter(c => (c.tag||'').toLowerCase()===tag);
+      if(items.length) appendIntoGridNear(new RegExp('^\s*'+title+'\s*$','i'), items);
+    });
+  }
+
+  // Badge styles
+  const st = document.createElement('style'); st.textContent = `
+    .badge{display:inline-block;padding:2px 8px;border-radius:999px;font-size:.75rem;margin-left:6px}
+    .badge-done{background:#22c55e20;color:#16a34a;border:1px solid #16a34a33}
+    .badge-wip{background:#f59e0b20;color:#d97706;border:1px solid #d9770633}
+    .badge-test{background:#6b728020;color:#374151;border:1px solid #37415133}
+    .badge-soon{background:#ef444420;color:#b91c1c;border:1px solid #b91c1c33}
+    .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;opacity:.85}
+  `; document.head.appendChild(st);
+
+  document.addEventListener('DOMContentLoaded', async () => {
+    const cards = await loadCards();
+    if(/powerpoints/i.test(location.pathname)) injectPresentations(cards);
+    else injectWebsites(cards);
+  });
+})();
+</script>
 
 </body>
 </html>
