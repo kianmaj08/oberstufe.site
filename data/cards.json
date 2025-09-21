@@ -1,13 +1,34 @@
 {
   "cards": [
     {
+      "created_at": "",
+      "url": "philexikon.netlify.app/",
+      "status": "in_arbeit",
+      "subtitle": "Ein Lexikon für bekannte Philosophen.",
+      "title": "Philexikon",
+      "is_published": true,
+      "type": "website",
+      "tag": "philosophie",
+      "id": "Philexikon1244"
+    },
+    {
       "type": "website",
       "status": "in_arbeit",
       "is_published": true,
-      "id": "yxcvb",
-      "title": "yxcv",
-      "subtitle": "yxcv",
-      "url": "yxcv",
+      "id": "Pieterbruegel",
+      "title": "Pieter Bruegel",
+      "subtitle": "Biografie, Kunstwerke und Hintergründe des Renaissance- Künstlers",
+      "url": "https://pieterbruegel.netlify.app/",
+      "tag": "kunst"
+    },
+    {
+      "type": "website",
+      "status": "in_arbeit",
+      "is_published": true,
+      "id": "Wienerkongress",
+      "title": "Wiener Kongress",
+      "subtitle": "Ein kurzer Überblick zum Wiener Kongress",
+      "url": "https://wienerkongress.netlify.app/",
       "tag": "geschichte"
     }
   ]
