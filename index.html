@@ -1240,6 +1240,7 @@ html[data-theme="dark"] .badge{ display:inline-block; padding:2px 8px; border-ra
           <input id="searchInput" type="search" placeholder="Suche nach Themen oder Tags … (z. B. Kunst, Philosophie, Geschichte)">
           <span class="hint" aria-hidden="true">⌘/Ctrl+K</span>
         </div>
+        <div id="searchInfo" style="margin-top:8px; font-size:.95rem; color:var(--muted)"></div>
       </div>
     </div>
   </section>
@@ -1726,6 +1727,49 @@ function badgeHTML(status){
   });
 
   window._openModal = window._openModal || openModalById;
+})();
+</script>
+
+
+<script>
+// v2.60 – Client-side search
+(function(){
+  const input = document.getElementById('searchInput');
+  const info = document.getElementById('searchInfo');
+  const grid = document.getElementById('websitesGrid') || document.querySelector('[data-tag]') || document.body;
+  if(!input) return;
+  function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  function items(){
+    // Any cards on this page
+    return Array.from(document.querySelectorAll('.card'));
+  }
+  function matches(el, q){
+    if(!q) return true;
+    const hay = norm(el.textContent);
+    const tags = (el.getAttribute('data-tags')||'') + ' ' + (el.getAttribute('data-tag')||'');
+    return hay.includes(q) || norm(tags).includes(q);
+  }
+  function apply(q){
+    const qn = norm(q);
+    const els = items();
+    let shown = 0;
+    els.forEach(el=>{
+      const ok = matches(el, qn);
+      el.style.display = ok ? '' : 'none';
+      if(ok) shown++;
+    });
+    if(info){
+      if(!q){ info.textContent = ''; }
+      else { info.textContent = shown===0 ? 'Keine Treffer' : shown + ' Treffer'; }
+    }
+  }
+  input.addEventListener('input', ()=> apply(input.value));
+  // Support Cmd/Ctrl+K to focus
+  document.addEventListener('keydown', (e)=>{
+    if((e.ctrlKey || e.metaKey) && (e.key==='k' || e.key==='K')){
+      e.preventDefault(); input.focus();
+    }
+  });
 })();
 </script>
 
