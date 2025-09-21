@@ -1,14 +1,3 @@
 {
-  "cards": [
-    {
-      "type": "website",
-      "status": "test",
-      "is_published": true,
-      "id": "gsfgs",
-      "title": "fgdgf",
-      "subtitle": "fgdg",
-      "url": "fdfdgdfg",
-      "tag": "physik"
-    }
-  ]
+  "cards": []
 }
