@@ -176,6 +176,7 @@
   html[data-theme="dark"] .dropdown .btn{ background:#111827 }
   /* Settings overlay */
   .overlay-backdrop{ position:fixed; inset:0; background:rgba(2,6,23,.45); backdrop-filter:blur(2px); display:none; z-index:90 }
+  .overlay-backdrop.show{ display:block }
   .modal{ position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); width:min(720px,94vw); max-height:80vh; overflow:auto; background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); display:none; z-index:91 }
   .modal-header{ padding:18px 18px 8px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center }
   .modal-body{ padding:14px 18px }
@@ -958,6 +959,55 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
     const cards=await loadCards();
     if(/powerpoints/i.test(location.pathname)) renderPresentations(cards);
     else renderWebsites(cards);
+  });
+})();
+</script>
+
+
+<script>
+// v2.50 – 3-dot menu toggle + overlay
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
+  if(!btn || !list) return;
+
+  function openMenu(){
+    list.classList.add('open');
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded','true');
+    overlay && overlay.classList.add('show');
+  }
+  function closeMenu(){
+    list.classList.remove('open');
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+    overlay && overlay.classList.remove('show');
+  }
+  function toggleMenu(){ list.classList.contains('open') ? closeMenu() : openMenu(); }
+
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggleMenu(); });
+  document.addEventListener('click', (e)=>{
+    if(!list.contains(e.target) && !btn.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
+
+  const hook=(id, fn)=>{ const el=document.getElementById(id); if(el) el.addEventListener('click', fn); };
+  const openModal=(id)=>{ const m=document.getElementById(id); if(m){ m.classList.add('open'); overlay && overlay.classList.add('show'); closeMenu(); } };
+  const closeModal=(id)=>{ const m=document.getElementById(id); if(m){ m.classList.remove('open'); overlay && overlay.classList.remove('show'); } };
+
+  hook('menuOpenSettings', ()=> openModal('modalSettings'));
+  hook('menuOpenChangelog', ()=> openModal('modalChangelog'));
+  hook('menuOpenLegend',   ()=> openModal('modalLegend'));
+  hook('menuOpenContact',  ()=> openModal('modalContact'));
+
+  hook('closeSettings', ()=> closeModal('modalSettings'));
+  hook('closeChangelog', ()=> closeModal('modalChangelog'));
+  hook('closeLegend', ()=> closeModal('modalLegend'));
+  hook('closeContact', ()=> closeModal('modalContact'));
+
+  overlay && overlay.addEventListener('click', ()=>{
+    closeModal('modalSettings'); closeModal('modalChangelog'); closeModal('modalLegend'); closeModal('modalContact'); closeMenu();
   });
 })();
 </script>
