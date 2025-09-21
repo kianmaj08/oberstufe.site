@@ -493,7 +493,6 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
       <p>Hier entsteht eine Sammlung unserer Videos.</p>
       <div class="search-wrap">
         <div class="search"><input id="searchInput" type="search" placeholder="Suche … (bald verfügbar)" disabled><span class="hint" aria-hidden="true">Coming soon</span></div>
-        <div id="searchInfo" style="margin-top:8px; font-size:.95rem; color:var(--muted)"></div>
       </div>
     </div>
   </section>
@@ -1065,47 +1064,7 @@ document.addEventListener('DOMContentLoaded', function(){
 </style>
 
 
-<script>
-// v2.60 – Client-side search
-(function(){
-  const input = document.getElementById('searchInput');
-  const info = document.getElementById('searchInfo');
-  const grid = document.getElementById('websitesGrid') || document.querySelector('[data-tag]') || document.body;
-  if(!input) return;
-  function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
-  function items(){
-    // Any cards on this page
-    return Array.from(document.querySelectorAll('.card'));
-  }
-  function matches(el, q){
-    if(!q) return true;
-    const hay = norm(el.textContent);
-    const tags = (el.getAttribute('data-tags')||'') + ' ' + (el.getAttribute('data-tag')||'');
-    return hay.includes(q) || norm(tags).includes(q);
-  }
-  function apply(q){
-    const qn = norm(q);
-    const els = items();
-    let shown = 0;
-    els.forEach(el=>{
-      const ok = matches(el, qn);
-      el.style.display = ok ? '' : 'none';
-      if(ok) shown++;
-    });
-    if(info){
-      if(!q){ info.textContent = ''; }
-      else { info.textContent = shown===0 ? 'Keine Treffer' : shown + ' Treffer'; }
-    }
-  }
-  input.addEventListener('input', ()=> apply(input.value));
-  // Support Cmd/Ctrl+K to focus
-  document.addEventListener('keydown', (e)=>{
-    if((e.ctrlKey || e.metaKey) && (e.key==='k' || e.key==='K')){
-      e.preventDefault(); input.focus();
-    }
-  });
-})();
-</script>
+
 
 <script>
 // v2.70 Menu + Modals + Theme
@@ -1153,5 +1112,28 @@ document.addEventListener('DOMContentLoaded', function(){
   tD && tD.addEventListener('click', ()=> setTheme('dark'));
 })();
 </script>
+
+<script>
+// v2.61 – Client-side search minimal (no counter, no layout shift)
+(function(){
+  const input = document.getElementById('searchInput');
+  if(!input) return;
+  function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  function items(){ return Array.from(document.querySelectorAll('.card')); }
+  function matches(el, q){
+    if(!q) return true;
+    const hay = norm(el.textContent);
+    const tags = (el.getAttribute('data-tags')||'') + ' ' + (el.getAttribute('data-tag')||'');
+    return hay.includes(q) || norm(tags).includes(q);
+  }
+  function apply(q){
+    const qn = norm(q);
+    items().forEach(el=>{ el.style.display = matches(el, qn) ? '' : 'none'; });
+  }
+  input.addEventListener('input', ()=> apply(input.value));
+  document.addEventListener('keydown', (e)=>{ if((e.ctrlKey||e.metaKey) && (e.key==='k'||e.key==='K')){ e.preventDefault(); input.focus(); }});
+})();
+</script>
+
 </body>
 </html>

@@ -1232,5 +1232,28 @@ const langDe=document.getElementById('langDe'); const langEn=document.getElement
   tD && tD.addEventListener('click', ()=> setTheme('dark'));
 })();
 </script>
+
+<script>
+// v2.61 – Client-side search minimal (no counter, no layout shift)
+(function(){
+  const input = document.getElementById('searchInput');
+  if(!input) return;
+  function norm(t){ return (t||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+  function items(){ return Array.from(document.querySelectorAll('.card')); }
+  function matches(el, q){
+    if(!q) return true;
+    const hay = norm(el.textContent);
+    const tags = (el.getAttribute('data-tags')||'') + ' ' + (el.getAttribute('data-tag')||'');
+    return hay.includes(q) || norm(tags).includes(q);
+  }
+  function apply(q){
+    const qn = norm(q);
+    items().forEach(el=>{ el.style.display = matches(el, qn) ? '' : 'none'; });
+  }
+  input.addEventListener('input', ()=> apply(input.value));
+  document.addEventListener('keydown', (e)=>{ if((e.ctrlKey||e.metaKey) && (e.key==='k'||e.key==='K')){ e.preventDefault(); input.focus(); }});
+})();
+</script>
+
 </body>
 </html>
