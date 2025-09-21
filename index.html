@@ -831,7 +831,637 @@ html[data-theme="dark"]
 .btn.btn-primary:hover{ filter:brightness(0.98) }
 
 
+/* v2.53 – solid status badges */
+.badge{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:.8rem; font-weight:600; border:none }
+.badge-done{ background:#22C55E; color:#fff; }
+.badge-wip{ background:#F59E0B; color:#fff; }
+.badge-test{ background:#EF4444; color:#fff; }
+.badge-soon{ background:#64748B; color:#fff; } /* neutral for coming soon */
 
+
+/* v2.53 – filled subject tags */
+.pill-tag{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:.8rem; font-weight:600; border:none }
+.pill-tag[class*="tag-"]{ color:#fff }
+.pill-tag.tag-philosophie, .pill-tag.tag-chemie, .pill-tag.tag-kunst{ color:#111 }
+.pill-tag.tag-philosophie{ background: var(--tag-philosophie) }
+.pill-tag.tag-erdkunde{ background: var(--tag-erdkunde) }
+.pill-tag.tag-geschichte{ background: var(--tag-geschichte) }
+.pill-tag.tag-physik{ background: var(--tag-physik) }
+.pill-tag.tag-kunst{ background: var(--tag-kunst) }
+.pill-tag.tag-sowi{ background: var(--tag-sowi) }
+.pill-tag.tag-deutsch{ background: var(--tag-deutsch) }
+.pill-tag.tag-sport{ background: var(--tag-sport) }
+.pill-tag.tag-mathe{ background: var(--tag-mathe) }
+.pill-tag.tag-chemie{ background: var(--tag-chemie) }
+.pill-tag.tag-informatik{ background: var(--tag-informatik) }
+
+
+/* v2.54 – status as small pill button on actions row */
+.card .actions{ display:flex; align-items:center; gap:10px; }
+.status-btn{ margin-left:auto; display:inline-flex; align-items:center; justify-content:center; height:28px; padding:0 10px; border-radius:9999px; font-size:.78rem; font-weight:700; line-height:1; }
+.status-btn.status-done{ background:#22C55E; color:#fff; }
+.status-btn.status-wip{ background:#F59E0B; color:#fff; }
+.status-btn.status-test{ background:#EF4444; color:#fff; }
+.status-btn.status-soon{ background:#64748B; color:#fff; }
+
+/* menu z-index fix */
+.dropdown{ z-index: 140; }
+
+/* v2.55 – menu clickability & layering */
+.menu-btn{ position:relative; z-index:150; pointer-events:auto }
+.dropdown{ z-index:140 }
+
+
+/* v2.56 – explicit menuList visibility + positioning */
+#menuList{ display:none; position:absolute; top:60px; right:20px; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.15); min-width:260px; z-index:200; overflow:hidden }
+#menuList.open{ display:block }
+
+
+/* ensure header right area anchors the dropdown properly */
+.header .right, header .right{ position:relative }
+
+.modal.open{ display:flex }
+/* ultra menu clickability */
+.menu-btn{ position:relative; z-index:500; pointer-events:auto }
+#menuList{ z-index:480; }
+</style>
+<style>
+</style>
+<style>
+/* === Dark Mode refinements (v2.32) === */
+html[data-theme="dark"]{
+  --bg:#0B0E14;
+  --card:#0F141E;
+  --text:#E6E6EB;
+  --muted:#B1B6C2;
+  --border:#1E2636;
+  --primary:#8AB3FF;
+  --primary-dark:#5B8CFF;
+  --shadow:0 10px 28px rgba(0,0,0,.45);
+  --link:#8AB3FF;
+  --link-strong:#BFD1FF;
+}
+/* Header / Nav */
+html[data-theme="dark"] header{
+  background:linear-gradient(180deg, rgba(16,22,36,.92), rgba(11,14,20,.70));
+  border-bottom:1px solid var(--border);
+}
+html[data-theme="dark"] .menu-btn{ background:#121826; border:1px solid var(--border) }
+/* Inputs / Search */
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="search"],
+html[data-theme="dark"] .search-bar,
+html[data-theme="dark"] .search{
+  background:#0F141E;
+  border:1px solid var(--border);
+  color:var(--text);
+}
+html[data-theme="dark"] ::placeholder{ color:#9AA3B2 }
+/* Cards */
+html[data-theme="dark"] .card{ background:var(--card); border-color:var(--border); box-shadow:0 10px 30px rgba(0,0,0,.35) }
+/* Buttons */
+html[data-theme="dark"] .btn{ background:#121826; border:1px solid var(--border); color:var(--text) }
+html[data-theme="dark"] .btn.primary{ background:var(--primary); color:#0B0E14; border:0 }
+/* Modals */
+html[data-theme="dark"] .modal{ background:var(--card); border:1px solid var(--border); color:var(--text) }
+/* Footer QR-Block */
+html[data-theme="dark"] .qr-in-footer{ background:#0F141E; border:1px solid var(--border) }
+/* Chips (Variante A) */
+html[data-theme="dark"] .subject-nav .chip{
+  background:#0F141E !important;
+  border-color:var(--chip-color,var(--border)) !important;
+  color:var(--text) !important;
+  box-shadow:0 1px 0 rgba(0,0,0,.4);
+}
+html[data-theme="dark"] .subject-nav .chip.active{ background:rgba(139,92,246,.15) !important }
+/* Scroll-to-top & Feedback */
+html[data-theme="dark"] #scrollUpBtn,
+html[data-theme="dark"] .to-top{ background:#1F2937; color:#fff }
+html[data-theme="dark"] .feedback-btn{ background:#0F141E; border:1px solid var(--border); color:var(--link-strong) }
+</style>
+<style>
+/* === Dark Mode: deep navy + beige accents (v2.33) === */
+html[data-theme="dark"]{
+  /* Deep navy (nicht schwarz) */
+  --bg:#0E121A;
+  --card:#121826;
+  --text:#E9E9EE;
+  --muted:#B5BBC9;
+  --border:#1E2636;
+  --shadow:0 10px 28px rgba(0,0,0,.42);
+
+  /* Beige Akzente */
+  --accent:#E6D5B8;          /* Hauptbeige */
+  --accent-strong:#D9C29A;   /* stärker für Linien/Outlines */
+  --accent-soft:rgba(230,213,184,.25); /* zarte Fills */
+
+  /* Links/Primary in Dark neutralisiert in Richtung Beige */
+  --primary:var(--accent);
+  --primary-dark:#CDAF85;
+  --link:var(--accent);
+  --link-strong:#F0E4CD;
+}
+
+/* Header / Nav */
+html[data-theme="dark"] header{
+  background:linear-gradient(180deg, rgba(18,24,38,.95), rgba(14,18,26,.78));
+  border-bottom:1px solid var(--border);
+}
+html[data-theme="dark"] header .nav a.active{
+  border-bottom-color: var(--accent-strong);
+}
+
+/* Infoboxen / Cards mit zartem beige Akzent */
+html[data-theme="dark"] .card{ background:var(--card); border-color:var(--border); box-shadow:0 10px 28px rgba(0,0,0,.38) }
+html[data-theme="dark"] .card--blue::before,
+html[data-theme="dark"] .card--brown::before,
+html[data-theme="dark"] .card--physik::before,
+html[data-theme="dark"] .card--erdkunde::before,
+html[data-theme="dark"] .card--geschichte::before{
+  background: var(--accent-strong) !important;
+  opacity:.9;
+}
+
+/* Buttons */
+html[data-theme="dark"] .btn{ background:#141B2A; border:1px solid var(--border); color:var(--text) }
+html[data-theme="dark"] .btn.primary{ background:var(--accent); color:#0E121A; border:0 }
+html[data-theme="dark"] .cta-button{ background:var(--accent); color:#0E121A; border:0 }
+
+/* Suche / Inputs */
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="search"],
+html[data-theme="dark"] .search-bar,
+html[data-theme="dark"] .search{
+  background:#121826;
+  border:1px solid var(--border);
+  color:var(--text);
+}
+html[data-theme="dark"] ::placeholder{ color:#9FA8BA }
+
+/* Modals */
+html[data-theme="dark"] .modal{ background:var(--card); border:1px solid var(--border); color:var(--text) }
+html[data-theme="dark"] .modal .modal-header{ border-bottom:1px solid var(--border) }
+
+/* Chips (Variante A) – Outline in Beige nur für neutrale Bereiche; Fachfarben bleiben */
+html[data-theme="dark"] .subject-nav .chip{
+  background:#121826 !important;
+  color:var(--text) !important;
+  box-shadow:0 1px 0 rgba(0,0,0,.38);
+}
+html[data-theme="dark"] .subject-nav .chip.active{ background:var(--accent-soft) !important; outline:2px solid var(--accent-strong) !important }
+html[data-theme="dark"] .subject-nav .chip:hover{ box-shadow:0 10px 22px rgba(0,0,0,.32) }
+
+/* Footer QR-Block */
+html[data-theme="dark"] .qr-in-footer{ background:#121826; border:1px solid var(--border) }
+
+/* Scroll-to-top & Feedback */
+html[data-theme="dark"] .to-top{ background:#1C2436; color:#fff }
+html[data-theme="dark"] .feedback-btn{ background:#121826; border:1px solid var(--border); color:var(--link-strong) }
+</style>
+<style>
+/* === Dark Mode Palette (v2.34) === */
+html[data-theme="dark"] {
+  --bg: #222831;
+  --card: #393E46;
+  --text: #F5F5F5;
+  --muted: #948979;
+  --border: #948979;
+  --accent: #DFD0B8;
+  --accent-strong: #DFD0B8;
+  --accent-soft: rgba(223,208,184,.15);
+  --primary: #DFD0B8;
+  --primary-dark: #948979;
+  --link: #DFD0B8;
+  --link-strong: #FFF5E1;
+}
+
+/* Backgrounds */
+html[data-theme="dark"] body { background: var(--bg); color: var(--text); }
+html[data-theme="dark"] header { background: var(--card); border-bottom: 1px solid var(--border); }
+html[data-theme="dark"] footer { background: var(--card); border-top: 1px solid var(--border); }
+
+/* Cards / Info-Boxen */
+html[data-theme="dark"] .card { background: var(--card); border: 1px solid var(--border); color: var(--text); }
+html[data-theme="dark"] .info-box { background: var(--card); border-left: 4px solid var(--accent-strong); }
+
+/* Inputs / Search */
+html[data-theme="dark"] input[type="text"],
+html[data-theme="dark"] input[type="search"],
+html[data-theme="dark"] .search-bar,
+html[data-theme="dark"] .search {
+  background: var(--card);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+html[data-theme="dark"] ::placeholder { color: var(--muted); }
+
+/* Buttons */
+html[data-theme="dark"] .btn { background: var(--card); border: 1px solid var(--border); color: var(--text); }
+html[data-theme="dark"] .btn.primary { background: var(--accent); color: #222831; border: 0; }
+html[data-theme="dark"] .cta-button { background: var(--accent); color: #222831; border: 0; }
+
+/* Chips (Variante A) */
+html[data-theme="dark"] .subject-nav .chip {
+  background: var(--card) !important;
+  border-color: var(--chip-color,var(--border)) !important;
+  color: var(--text) !important;
+  box-shadow: 0 1px 0 rgba(0,0,0,.3);
+}
+html[data-theme="dark"] .subject-nav .chip.active {
+  background: var(--accent-soft) !important;
+  outline: 2px solid var(--accent-strong) !important;
+}
+html[data-theme="dark"] .subject-nav .chip:hover { box-shadow: 0 8px 18px rgba(0,0,0,.35); }
+
+/* Scroll-to-top & Feedback */
+html[data-theme="dark"] .to-top { background: var(--card); color: var(--text); border: 1px solid var(--border); }
+html[data-theme="dark"] .feedback-btn { background: var(--card); border: 1px solid var(--border); color: var(--link-strong); }
+</style>
+<style>
+/* v2.35 Dark Mode: Haupttitel in Anthrazit */
+html[data-theme="dark"] h1.site-title {
+  color: #393E46;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(0,0,0,.7);
+}
+</style>
+<style>
+/* v2.39 Changelog styling */
+.changelog-list { list-style:none; margin:0; padding:0; }
+.changelog-list li { margin:4px 0; }
+.changelog-list .version { font-weight:600; }
+.changelog-list .date { color:#9ca3af; }
+.changelog-list li.feature { color:#22c55e; } /* Grün */
+.changelog-list li.bugfix  { color:#6b7280; } /* Grau */
+.changelog-list li.design  { color:#3b82f6; } /* Blau */
+</style>
+<style>
+/* v2.40 Changelog unified styling + modal header */
+.changelog-list { list-style:none; margin:0; padding:0; }
+.changelog-list li { margin:4px 0; color:#6b7280; } /* default grey */
+.changelog-list .version { font-weight:600; }
+.changelog-list .date { color:#9ca3af; }
+
+/* Modal header: title left, close right */
+.modal .modal-header {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; margin-bottom:10px;
+}
+.modal .modal-header h3 { margin:0; font-weight:700; }
+.modal .modal-header .modal-close { margin-left:auto; }
+
+/* Ensure close button aligns right even in existing markup */
+#modalChangelog .modal-header { display:flex; align-items:center; justify-content:space-between; }
+#modalChangelog .modal-header button { margin-left:auto; }
+</style>
+<style>
+/* v2.40: Titel Anthrazit global */
+h1.site-title { color:#393E46; }
+</style>
+<style>
+/* v2.41a: Dark title fix + changelog styles + feedback links */
+html[data-theme="dark"] h1.site-title,
+html[data-theme="dark"] .title-anthrazit { color:#393E46 !important; }
+
+/* Changelog ULs unified look & colors */
+#modalChangelog ul { list-style:none; margin:0; padding:0; }
+#modalChangelog li { margin:4px 0; color:#6b7280; } /* default grey */
+#modalChangelog li .version { font-weight:600; }
+#modalChangelog li .date { color:#9ca3af; }
+#modalChangelog li.feature { color:#22c55e; }  /* Grün */
+#modalChangelog li.design  { color:#3b82f6; }  /* Blau */
+#modalChangelog li.bugfix  { color:#6b7280; }  /* Grau */
+
+/* Feedback card links in blue */
+.feedback-card a { color:#3b82f6 !important; font-weight:600; }
+html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
+</style>
+<style>
+/* v2.42 Changelog color coding */
+#modalChangelog .changelog-list { list-style:none; margin:0; padding:0; }
+#modalChangelog .changelog-list li { margin:4px 0; }
+#modalChangelog .changelog-list .version { font-weight:600; }
+#modalChangelog .changelog-list .date { color:#9ca3af; }
+#modalChangelog .changelog-list li.feature { color:#22c55e; }  /* Grün */
+#modalChangelog .changelog-list li.bugfix  { color:#6b7280; }  /* Grau */
+#modalChangelog .changelog-list li.design  { color:#3b82f6; }  /* Blau */
+</style>
+
+<style>
+.card-grid{ display:grid;
+  .card-grid .card{ grid-column:auto }
+ grid-template-columns:1fr; gap:16px }
+@media (min-width:700px){ .card-grid.two-cols{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px } }
+@media (min-width:1100px){ .card-grid.two-cols{ gap:20px } }
+@media (max-width: 640px){ .card-grid.two-cols{ grid-template-columns:1fr } }
+.card-grid{ grid-auto-flow: row dense; }
+
+  /* TAG PILL COLORS */
+  :root{
+  --tag-philosophie:#FACC15;
+  --tag-erdkunde:#22C55E;
+  --tag-geschichte:#8B5E3C;
+  --tag-physik:#374151;
+  --tag-kunst:#60A5FA;
+  --tag-sowi:#7C3AED;
+  --tag-deutsch:#EF4444;
+  --tag-sport:#14B8A6;
+  --tag-mathe:#F97316;
+  --tag-chemie:#84CC16;
+  --tag-informatik:#4F46E5;
+}
+
+.card{ position:relative; border-radius:16px; padding:16px; background:#fff; border:1px solid #e5e7eb; box-shadow:0 6px 18px rgba(0,0,0,.06) }
+html[data-theme="dark"] .card{ background:#222831; border-color:#393E46; box-shadow:0 6px 18px rgba(0,0,0,.35) }
+.card::before{ content:""; position:absolute; left:0; top:0; height:6px; width:100%; border-top-left-radius:16px; border-top-right-radius:16px; background:var(--accent,#e5e7eb) }
+
+.card--philosophie{ --accent: var(--tag-philosophie); }
+.card--erdkunde{ --accent: var(--tag-erdkunde); }
+.card--geschichte{ --accent: var(--tag-geschichte); }
+.card--physik{ --accent: var(--tag-physik); }
+.card--kunst{ --accent: var(--tag-kunst); }
+.card--sowi{ --accent: var(--tag-sowi); }
+.card--deutsch{ --accent: var(--tag-deutsch); }
+.card--sport{ --accent: var(--tag-sport); }
+.card--mathe{ --accent: var(--tag-mathe); }
+.card--chemie{ --accent: var(--tag-chemie); }
+.card--informatik{ --accent: var(--tag-informatik); }
+
+.card h3{ margin:6px 0 8px; font-size:1.06rem }
+.card .muted{ opacity:.8; margin:0 0 10px }
+.card-thumb{ width:64px; height:64px; object-fit:cover; border-radius:12px; display:block; margin:6px 0 }
+
+.card .row-tags{ display:flex; align-items:center; justify-content:space-between; margin-top:8px }
+.card .row-tags .left{ display:flex; gap:8px; align-items:center }
+html[data-theme="dark"] .badge{ display:inline-block; padding:2px 8px; border-radius:999px; font-size:.75rem; }
+.card .actions{ margin-top:12px }
+.btn.btn-primary{ display:inline-block; padding:8px 14px; border-radius:10px; background:#e6f0ff; border:1px solid #cfe0ff; text-decoration:none }
+.btn.btn-primary:hover{ filter:brightness(0.98) }
+</style>
+
+</head>
+<body>
+
+  
+  <header>
+    <div class="wrap">
+      <div class="left">
+        <a class="brand" href="index.html">oberstufe.site</a>
+      </div>
+      <nav class="nav">
+        <a href="index.html" data-i18n="nav_home" class="active">Home</a>
+        <a href="powerpoints.html" data-i18n="nav_pp" class="">PowerPoints</a>
+        <a href="videos.html" data-i18n="nav_videos" class="">Videos</a>
+      </nav>
+      <div class="right">
+        <button class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menü">
+          <span class="menu-icon" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
+        </button>
+        <div class="dropdown" id="menuList" role="menu" aria-label="Menü">
+          <div class="row"><a href="javascript:void(0)" id="menuOpenSettings" href="#modalSettings" onclick="document.getElementById('modalSettings').classList.add('open'); var ov=document.getElementById('overlayGlobal'); if(ov) ov.classList.add('show'); return false;">Einstellungen</a></div>
+          <div class="row"><a href="javascript:void(0)" id="menuOpenChangelog" href="#modalChangelog" onclick="document.getElementById('modalChangelog').classList.add('open'); var ov=document.getElementById('overlayGlobal'); if(ov) ov.classList.add('show'); return false;">Changelog</a></div>
+          <div class="row"><a href="javascript:void(0)" id="menuOpenLegend" href="#modalLegend" onclick="document.getElementById('modalLegend').classList.add('open'); var ov=document.getElementById('overlayGlobal'); if(ov) ov.classList.add('show'); return false;">Legende</a></div>
+          <div class="row"><a href="javascript:void(0)" id="menuOpenContact" href="#modalContact" onclick="document.getElementById('modalContact').classList.add('open'); var ov=document.getElementById('overlayGlobal'); if(ov) ov.classList.add('show'); return false;">Kontakt</a></div>
+          <div class="row"><a href="/admin" target="_blank" rel="noopener" class="btn" style="width:100%">Admin&nbsp;Login</a></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <section class="hero" style="background:linear-gradient(135deg,#E8EEF8 0%,#F3F5F9 100%);">
+    <div class="container">
+      <h1 data-i18n="hero_home_title">Willkommen auf oberstufe.site</h1>
+      <p data-i18n="hero_home_sub">Die zentrale Startseite unserer Projekte</p>
+      <p class="meta">Ein Projekt von Kian Majidian, Basit Rezai, Mark Naujoks, Kamil Köse und Hugo Alvarez aus der Q1.</p>
+      <div class="search-wrap">
+        <div class="search" role="search">
+          <input id="searchInput" type="search" placeholder="Suche nach Themen oder Tags … (z. B. Kunst, Philosophie, Geschichte)">
+          <span class="hint" aria-hidden="true">⌘/Ctrl+K</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
+        <h2 data-i18n="grid_title">Unsere Websites</h2>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <label for="sortSelect" class="muted" style="font-size:.95rem;">Sortieren:</label>
+          <select id="sortSelect" class="btn" style="padding:8px 10px;">
+            <option value="standard" selected>Standard</option>
+            <option value="neu">Neueste</option>
+            <option value="az">A–Z</option>
+          </select>
+        </div>
+      </div>
+      <div id="websitesGrid" class="card-grid two-cols"></div>
+    </div>
+  </section>
+
+  <!-- Info Cards Section -->
+  <section class="section">
+  <div class="container info-section">
+    <div class="stack">
+      <div class="box accent">
+        <h3>Über dieses Projekt</h3>
+<p>Dieses Projekt entstand im Rahmen unserer schulischen Arbeiten. Wir experimentieren mit künstlicher Intelligenz, entwickeln Präsentationen und erstellen Websites, die wir hier auf oberstufe.site veröffentlichen.</p>
+<p>Unsere Seiten werden mit Hilfe von <a class="link" href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> gehostet, während die Domain über <a class="link" href="https://www.squarespace.com/" target="_blank" rel="noopener">Squarespace</a> verwaltet wird.</p>
+<p>Bitte beachten Sie: Die Websites sind noch nicht vollendet. Inhalte und Gestaltung können sich jederzeit ändern.</p>
+<p>Bei Fragen oder Ideen können Sie uns gerne unter <a class="link" href="mailto:oberstufesite@gmail.com">oberstufesite@gmail.com</a> erreichen.</p>
+      </div>
+      <div class="grid2">
+        <div class="box accent span2 span2">
+<h3>Geplante Verbesserungen</h3>
+<p>Wir arbeiten kontinuierlich an der Weiterentwicklung unserer Projekte. In den kommenden Wochen sind unter anderem folgende Schritte vorgesehen:</p>
+<ul>
+  <li><strong>Optimierungen der Homepage</strong> – Verbesserung von Struktur, Design und Benutzerfreundlichkeit.</li>
+  <li><strong>Integration von Bildern</strong> – Ergänzung passender Abbildungen sowohl auf der Philexikon‑Seite als auch auf der Pieter‑Bruegel‑Seite, um die Inhalte anschaulicher zu gestalten.</li>
+</ul>
+        </div>
+      </div>
+      <div class="box" style="background:transparent; border:none; box-shadow:none; padding:0;">
+        <h3 style="color:#2563EB; margin:0 0 6px 0;">FAQ</h3>
+<div class="faq-list">
+  <div class="faq-item">
+    <strong>Was ist oberstufe.site?</strong>
+    <p>oberstufe.site ist unsere zentrale Startseite, die alle Schülerprojekte bündelt.</p>
+  </div>
+  <div class="faq-item">
+    <strong>Warum gibt es mehrere Websites?</strong>
+    <p>Jedes Projekt hat ein eigenes Thema (z.&nbsp;B. Philosophie, Kunst, Geschichte) und wird deshalb auf einer eigenen Website präsentiert.</p>
+  </div>
+  <div class="faq-item">
+    <strong>Sind die Inhalte schon final?</strong>
+    <p>Nein – alle Projekte sind noch in Arbeit. Inhalte und Design können sich jederzeit ändern.</p>
+  </div>
+  <div class="faq-item">
+    <strong>Wie werden die Seiten betrieben?</strong>
+    <p>Unsere Websites laufen über <a class="link" href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a>, die Domain wird über <a class="link" href="https://www.squarespace.com/" target="_blank" rel="noopener">Squarespace</a> verwaltet.</p>
+  </div>
+  <div class="faq-item">
+    <strong>Kann ich Feedback geben oder Ideen einreichen?</strong>
+    <p>Ja, gerne per E‑Mail an <a class="link" href="mailto:oberstufesite@gmail.com">oberstufesite@gmail.com</a> oder über unser <a class="link" href="https://docs.google.com/forms/d/e/1FAIpQLSc7hitAkvgDHXnOKgRpvolibMhm3iHeag_V-Azm4Mz8zef63w/viewform?usp=dialog" target="_blank" rel="noopener">Feedback‑Formular</a>.</p>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="cta-button" href="add-website.html" data-i18n="cta_add">Projekt hinzufügen</a>
+      <div class="footer-meta">© 2025 oberstufe.site – v2.38a</div>
+      <div class="qr-in-footer" id="qrBlock" title="QR-Code">
+        <div class="share-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l5-5 5 5"/><path d="M12 12v2.38a"/></svg>
+          <span data-i18n="share_site">Teile diese Website!</span>
+        </div>
+        <img src="qr-placeholder.jpg" alt="QR-Code">
+      </div>
+    </div>
+  </footer>
+
+  <div id="overlayGlobal" class="overlay-backdrop"></div>
+
+  <div id="modalSettings" class="modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+    <div class="modal-header">
+      <h3 id="settingsTitle" data-i18n="settings_title">Einstellungen</h3>
+      <button id="closeSettings" class="btn">Schließen</button>
+    </div>
+    <div class="modal-body">
+      <div class="row-setting">
+        <span data-i18n="set_theme">Theme</span>
+        <div class="icon-toggle" role="group" aria-label="Theme">
+          <button id="themeLight" class="icon-btn" title="Hell" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+          <button id="themeDark" class="icon-btn" title="Dunkel" aria-pressed="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="row-setting">
+        <span data-i18n="set_lang">Sprache</span>
+        <div>
+          <button id="langDe" class="btn" style="margin-right:6px;">DE</button>
+          <button id="langEn" class="btn">EN</button>
+        </div>
+      </div>
+      </div>
+      
+      
+    </div>
+  </div>
+
+  <div id="modalChangelog" class="modal" role="dialog" aria-modal="true" aria-labelledby="changelogTitle">
+    <div class="modal-header"><h3 id="changelogTitle">Changelog</h3><button id="closeChangelog" class="btn">Schließen</button>
+<ul><li>v2.14 – Navigation verbessert, Menü überarbeitet (21.09.2025)</li><li>v2.15 – Darkmode eingeführt (21.09.2025)</li><li>v2.16 – Footer überarbeitet (21.09.2025)</li><li>v2.17 – Scroll-Up Button eingefügt (21.09.2025)</li><li>v2.18 – Header/Navi Bugfixes (21.09.2025)</li><li>v2.19 – Design-Optimierungen, Animationen (21.09.2025)</li><li>v2.20 – Farbpalette angepasst (21.09.2025)</li><li>v2.21 – Changelog hinzugefügt (21.09.2025)</li><li>v2.22 – Kleine Layout-Fixes (21.09.2025)</li><li>v2.23 – Neue Version bereitgestellt (21.09.2025)</li><li>v2.24 – Bugfix Scroll-Up Button (21.09.2025)</li><li>v2.25 – Feedback Button hinzugefügt (21.09.2025)</li><li>v2.26 – Korrektur Scroll-Button Verhalten (21.09.2025)</li><li>v2.27 – Chips Design begonnen (21.09.2025)</li><li>v2.28 – Chips farbig (erste Version) (21.09.2025)</li><li>v2.29 – Chips Bugfix (korrekte Farben) (21.09.2025)</li><li>v2.30 – Chips Variante A umgesetzt (21.09.2025)</li><li>v2.31 – Chips Farben in allen Fächern gefixt (21.09.2025)</li><li>v2.32 – Dark Mode Kontrast & Elemente verbessert (21.09.2025)</li><li>v2.33 – Dark Mode Navy + Beige Akzente (21.09.2025)</li><li>v2.34 – Dark Mode Palette #222831/#393E46/#948979/#DFD0B8 (21.09.2025)</li><li>v2.35 – Dark Mode: Titel Anthrazit (21.09.2025)</li><li>v2.36 – Interne Robustheit verbessert (21.09.2025)</li><li>v2.37 – Listener/JS-Struktur bereinigt (21.09.2025)</li><li>v2.38 – Finales Update vor 2.38a Release (21.09.2025)</li></ul>
+</div>
+    <div class="modal-body">
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v1.0 – 18.09.2025</span> · Erste Veröffentlichung der Homepage</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#22C55E;">Erweiterungen – 18.09.2025</span> · Philexikon & Pieter Bruegel integriert</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.0 – 18.09.2025</span> · Überarbeitetes Design</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.1 – 18.09.2025</span> · Feinschliff</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.2 – 19.09.2025</span> · Wiener Kongress, Suche & Tags</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.4 – 20.09.2025</span> · QR im Footer, CTA, Design-Fixes</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#6B7280;">v2.6 – 20.09.2025</span> · Farben wie 12.4, FAQ-Akzente, Menü-Align Fix</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#22C55E;">v2.7 – 20.09.2025</span> · PowerPoints & Videos, Share-Hinweis, Header-Navigation</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#22C55E;">v2.7e – 20.09.2025</span> · Komplettpaket (alle Unterseiten), PPT-Downloads vorbereitet</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.8 – 20.09.2025</span> · Fächer-Abschnitte (PP), DE/EN, QR-Option, „Unsere Websites“</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#22C55E;">v2.8a – 20.09.2025</span> · PP-Chips als Tags, Add-Seite 3 Spalten</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#6B7280;">v2.8b – 20.09.2025</span> · Bugfix: getrennte Seiten, saubere Header/Footer</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#6B7280;">v2.8c – 20.09.2025</span> · Bugfix: kein Zusammenkleben der Seiten</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#6B7280;">v2.8d – 20.09.2025</span> · Einstellungen repariert, Chips hübscher, CTA auf Add-Seite ausgeblendet</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.9 – 20.09.2025</span> · Changelog-Overlay, Dark Mode verbessert, Chips Variante A, Legende & Sprache gefixt</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.10 – 20.09.2025</span> · Hamburger-Icon (3 Striche) & Bugfixes; neue Fachfarben</li>
+        <li style="margin:10px 0;"><span style="font-weight:800; color:#2563EB;">v2.11 – 20.09.2025</span> · Menü-Overlays (Kontakt/Changelog/Legende/Einstellungen), Theme-Switch mit SVG-Sonne/Mond, vollständige DE/EN, Fachfarben fix</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id="modalLegend" class="modal" role="dialog" aria-modal="true" aria-labelledby="legendTitle">
+    <div class="modal-header"><h3 id="legendTitle">Legende</h3><button id="closeLegend" class="btn">Schließen</button></div>
+    <div class="modal-body">
+      <h4 style="margin:10px 0 6px">Tags</h4>
+      <p>Farbige Schlagworte geben die Fachbereiche an:</p>
+      <div class="legend-tags">
+<span class="tag chemie">Chemie</span>
+        <span class="tag deutsch">Deutsch</span>
+        <span class="tag erdkunde">Erdkunde</span>
+        <span class="tag geschichte">Geschichte</span>
+        <span class="tag informatik">Informatik</span>
+        <span class="tag kunst">Kunst</span>
+        <span class="tag mathe">Mathe</span>
+        <span class="tag physik">Physik</span>
+        <span class="tag philosophie">Philosophie</span>
+        <span class="tag sowi">SoWi</span>
+        <span class="tag sport">Sport</span>
+</div>
+
+      <h4 style="margin:16px 0 6px">Status‑Badges</h4>
+      <p>Zeigen den aktuellen Stand eines Projekts:</p>
+      <div class="legend-status">
+        <span class="status green">Fertig</span>
+        <span class="status yellow">In Arbeit</span>
+        <span class="status red">Test</span>
+        <span class="status blue">Coming&nbsp;Soon</span>
+</div>
+      <ul class="legend-list">
+  <ul class="status-list">
+    <li class="status-item"><span class="status green">Fertig</span><span class="name">Fertig</span><span class="desc">Projekt/Präsentation ist abgeschlossen.</span></li>
+    <li class="status-item"><span class="status yellow">In Arbeit</span><span class="name">In Arbeit</span><span class="desc">Inhalte werden noch erstellt oder überarbeitet.</span></li>
+    <li class="status-item"><span class="status red">Test</span><span class="name">Test</span><span class="desc">Entwurf oder Beta; kann Fehler enthalten.</span></li>
+    <li class="status-item"><span class="status blue">Coming Soon</span><span class="name">Coming Soon</span><span class="desc">Geplant, aber noch nicht veröffentlicht.</span></li>
+  </ul>
+</ul>
+
+    </div>
+    </div>
+  </div>
+
+  <div id="modalContact" class="modal" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <div class="modal-header"><h3 id="contactTitle" data-i18n="contact_title">Kontakt</h3><button id="closeContact" class="btn">Schließen</button></div>
+    <div class="modal-body">
+      <p><strong>E-Mail:</strong> <a href="mailto:oberstufesite@gmail.com" class="link">oberstufesite@gmail.com</a></p>
+      <p><a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSc7hitAkvgDHXnOKgRpvolibMhm3iHeag_V-Azm4Mz8zef63w/viewform?usp=dialog" target="_blank" rel="noopener" data-i18n="contact_form">Zum Feedback-Formular</a></p>
+    </div>
+  </div>
+
+  <a class="feedback-btn" id="feedbackBtn" href="https://docs.google.com/forms/d/e/1FAIpQLSc7hitAkvgDHXnOKgRpvolibMhm3iHeag_V-Azm4Mz8zef63w/viewform?usp=dialog" target="_blank" rel="noopener" data-i18n="feedback">Feedback</a>
+  <button class="to-top" id="toTopBtn" aria-label="Nach oben scrollen" title="Nach oben"><svg viewBox="0 0 48 48" width="22" height="22" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="rgba(255,255,255,.65)" stroke-width="2"/><path d="M16 26l8-8 8 8" fill="none" stroke="#2563EB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+
+
+<script>
+/* v2.17 theme js */
+(function(){
+  const themeLight=document.getElementById('themeLight');
+  const themeDark=document.getElementById('themeDark');
+  function setTheme(next){
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next);}catch(e){}
+    if(themeLight) themeLight.classList.toggle('active', next==='light');
+    if(themeDark) themeDark.classList.toggle('active', next==='dark');
+  }
+  const saved=localStorage.getItem('theme') || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+  setTheme(saved);
+  themeLight && themeLight.addEventListener('click', ()=> setTheme('light'));
+  themeDark && themeDark.addEventListener('click', ()=> setTheme('dark'));
+})();
+</script>
 
 
 
@@ -1060,14 +1690,11 @@ function badgeHTML(status){
 
 
 <script>
-
-
-
-<script>
-/* v2.60 – minimal, isolated menu toggle */
+/* v2.59 – Hamburger Menü (neu codiert) */
 (function(){
-  var btn = document.getElementById('menuBtn');
-  var list = document.getElementById('menuList');
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
   if(!btn || !list) return;
 
   function openMenu(){
@@ -1080,13 +1707,28 @@ function badgeHTML(status){
     btn.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
   }
-  function toggle(){ list.classList.contains('open') ? closeMenu() : openMenu(); }
+  function toggleMenu(){ list.classList.contains('open') ? closeMenu() : openMenu(); }
 
-  btn.addEventListener('click', function(e){ e.stopPropagation(); toggle(); });
-  document.addEventListener('click', function(e){ if(!list.contains(e.target) && !btn.contains(e.target)) closeMenu(); });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeMenu(); });
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggleMenu(); });
+  document.addEventListener('click', (e)=>{ if(!list.contains(e.target) && !btn.contains(e.target)) closeMenu(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') closeMenu(); });
+
+  function openModalById(id){
+    const m = document.getElementById(id);
+    if(!m) return;
+    m.classList.add('open');
+    if(overlay) overlay.classList.add('show');
+    closeMenu();
+  }
+
+  list.querySelectorAll('[data-modal]').forEach(a=>{
+    a.addEventListener('click', (e)=>{ e.preventDefault(); openModalById(a.getAttribute('data-modal')); });
+  });
+
+  window._openModal = window._openModal || openModalById;
 })();
 </script>
 
 </body>
 </html>
+</script></script>
