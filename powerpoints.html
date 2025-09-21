@@ -669,21 +669,7 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
       </nav>
       <div class="right"><button class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menü">
           <span class="menu-icon" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
-        </button><div class="dropdown" id="menuList" role="menu" aria-label="Menü">
-  <div class="menu-stack">
-    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalSettings">Einstellungen</a>
-    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalChangelog">Changelog</a>
-    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalLegend">Legende</a>
-    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalContact">Kontakt</a>
-    <a href="/admin" target="_blank" rel="noopener" class="btn btn-menu">Admin&nbsp;Login</a>
-  </div></div><div class="row"><button class="menu-item" data-modal="modalChangelog">Changelog</button></div>
-  <div class="row"><button class="menu-item" data-modal="modalLegend">Legende</button></div>
-  <div class="row"><button class="menu-item" data-modal="modalContact">Kontakt</button></div>
-  <div class="row"><a href="/admin" target="_blank" rel="noopener" class="btn" style="width:100%">Admin&nbsp;Login</a></div>
-</div><div class="row"></div>
-          <div class="row"></div>
-          <div class="row"></div>
-        </div>
+        </button></div></div></div></div>
       </div>
     </div>
   </header>
@@ -1174,7 +1160,7 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
       ${c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:''}
       <h3>${c.title||''}</h3>
       ${c.subtitle?`<p class="muted">${c.subtitle}</p>`:''}
-      <div class="row-tags"><div class="left">${tagPill(tag)}</div><div class="right">${badgeHTML(c.status)}</div></div>
+      <div class="row-tags"><div class="left">${tagPill(tag)}</div><div class="right"></div></div>
       <div class="actions"><a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a></div>
     </div>`;
   }
