@@ -1,15 +1,3 @@
 {
-  "cards": [
-    {
-      "authors": "asdfg",
-      "url": "asdfg",
-      "status": "in_arbeit",
-      "subtitle": "sdfg",
-      "title": "asdfg",
-      "is_published": true,
-      "type": "website",
-      "tag": "erdkunde",
-      "id": "asd"
-    }
-  ]
+  "cards": []
 }
