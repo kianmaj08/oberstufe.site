@@ -864,6 +864,8 @@ html[data-theme="dark"]
 .status-btn.status-test{ background:#EF4444; color:#fff; }
 .status-btn.status-soon{ background:#64748B; color:#fff; }
 
+/* menu z-index fix */
+.dropdown{ z-index: 140; }
 </style>
 <style>
 </style>
@@ -1575,7 +1577,12 @@ function badgeHTML(status){
 <script>
 
 <script>
-// v2.51 – menu toggle without overlay; overlay only for modals
+
+
+
+
+<script>
+// v2.52 – menu toggle (no overlay), modals use overlay
 (function(){
   const btn = document.getElementById('menuBtn');
   const list = document.getElementById('menuList');
@@ -1586,13 +1593,11 @@ function badgeHTML(status){
     list.classList.add('open');
     btn.classList.add('open');
     btn.setAttribute('aria-expanded','true');
-    // no overlay for menu
   }
   function closeMenu(){
     list.classList.remove('open');
     btn.classList.remove('open');
     btn.setAttribute('aria-expanded','false');
-    // no overlay for menu
   }
   function toggleMenu(){ list.classList.contains('open') ? closeMenu() : openMenu(); }
 
@@ -1622,7 +1627,6 @@ function badgeHTML(status){
   });
 })();
 </script>
-
 
 </body>
 </html>
