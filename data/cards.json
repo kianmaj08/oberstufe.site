@@ -1,37 +1,3 @@
 {
-  "cards": [
-    {
-      "id": "philexikon",
-      "title": "Philexikon",
-      "subtitle": "Ein Lexikon für bekannte Philosophen.",
-      "url": "#",
-      "type": "website",
-      "tag": "philosophie",
-      "is_published": true,
-      "status": "in_arbeit",
-      "image_url": ""
-    },
-    {
-      "id": "pieter-bruegel",
-      "title": "Pieter Bruegel",
-      "subtitle": "Biografie, Kunstwerke und Hintergründe des Renaissance-Malers.",
-      "url": "https://philexikon.netlify.app/",
-      "type": "website",
-      "tag": "geschichte",
-      "is_published": true,
-      "status": "in_arbeit",
-      "image_url": ""
-    },
-    {
-      "id": "wiener-kongress",
-      "title": "Wiener Kongress",
-      "subtitle": "Kurzer Überblick zum Wiener Kongress.",
-      "url": "https://pieterbruegel.netlify.app/",
-      "type": "website",
-      "tag": "geschichte",
-      "is_published": true,
-      "status": "in_arbeit",
-      "image_url": ""
-    }
-  ]
+  "cards": []
 }
