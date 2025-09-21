@@ -605,6 +605,63 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
     </div>
   </section>
 
+  <!-- Info Cards Section -->
+  <section class="section">
+    <div class="container">
+      <div class="info" style="background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow);">
+        <h3>Über dieses Projekt</h3>
+        <p>Diese Startseite bündelt unsere Q1‑Webprojekte. Ziel ist eine zentrale, saubere Übersicht mit Suchfunktion, Tags und konsistentem Design.</p>
+        <p>Karten werden über <strong>/admin</strong> gepflegt und automatisch im Grid angezeigt. Hosting: Netlify; Domain-Verwaltung via Squarespace.</p>
+        <p>Kontakt: <a class="link" href="mailto:oberstufesite@gmail.com">oberstufesite@gmail.com</a></p>
+      </div>
+
+      <div class="improvements" style="margin-top:16px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px;">
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow);">
+          <h3>Geplante Verbesserungen</h3>
+          <ul>
+            <li><strong>Sortierung</strong>: Standard, A–Z, Neueste pro Tag.</li>
+            <li><strong>Suche</strong>: Schnelleres Indexing der Karten.</li>
+            <li><strong>Design</strong>: Kleinere Animationen & Fokuszustände.</li>
+          </ul>
+        </div>
+        <div style="background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow);">
+          <h3>Status & Transparenz</h3>
+          <p>„In Arbeit“ kennzeichnet aktive Projekte. „Test“ sind Versuchs-Seiten. „Coming Soon“ ist reserviert für geplante Inhalte.</p>
+          <ul class="status-list" style="list-style:none; padding:0; margin:12px 0 0 0; display:grid; grid-template-columns:1fr; gap:10px">
+            <li class="status-item" style="display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:2px; align-items:center">
+              <span class="badge badge-done">Fertig</span><span class="name">Fertig</span><span class="desc">Abgeschlossen und öffentlich.</span>
+            </li>
+            <li class="status-item" style="display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:2px; align-items:center">
+              <span class="badge badge-wip">In Arbeit</span><span class="name">In Arbeit</span><span class="desc">Wird aktiv erweitert.</span>
+            </li>
+            <li class="status-item" style="display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:2px; align-items:center">
+              <span class="badge badge-test">Test</span><span class="name">Test</span><span class="desc">Experimentelle Seite.</span>
+            </li>
+            <li class="status-item" style="display:grid; grid-template-columns:auto 1fr; column-gap:10px; row-gap:2px; align-items:center">
+              <span class="badge badge-soon">Coming Soon</span><span class="name">Coming Soon</span><span class="desc">Geplant, noch ohne Inhalt.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="faq" style="margin-top:16px; background:var(--card); border:1px solid var(--border); border-radius:16px; padding:18px; box-shadow:var(--shadow);">
+        <h3>FAQ</h3>
+        <div class="faq-item" style="margin:12px 0;">
+          <strong>Wie füge ich eine neue Website hinzu?</strong>
+          <p>Über <em>/admin</em> → Sammlung „Cards“ → Eintrag erstellen (Typ „website“). Nach dem Speichern erscheint sie automatisch im Grid.</p>
+        </div>
+        <div class="faq-item" style="margin:12px 0;">
+          <strong>Warum sehe ich die Seite 2×?</strong>
+          <p>Falls Duplikate auftauchen, gibt es meist eine zweite Render‑Section. Diese Version entfernt sie vollständig.</p>
+        </div>
+        <div class="faq-item" style="margin:12px 0;">
+          <strong>Wie funktionieren Tags & Badges?</strong>
+          <p>Tags setzen die Akzentfarbe oben an der Karte. Der Badge zeigt den Projekt‑Status.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <footer>
     <div class="container footer-inner">
