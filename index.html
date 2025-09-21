@@ -1199,6 +1199,16 @@ html[data-theme="dark"] .badge{ display:inline-block; padding:2px 8px; border-ra
 .btn.btn-primary:hover{ filter:brightness(0.98) }
 </style>
 
+<style>
+          /* Clean, unified dropdown buttons */
+          .dropdown{ position:absolute; top:72px; right:20px; background:var(--card); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); min-width:280px; display:none; z-index:70; overflow:hidden; padding:10px }
+          .dropdown.open{ display:block }
+          .menu-stack{ display:flex; flex-direction:column; gap:8px }
+          .btn{ display:inline-flex; align-items:center; gap:8px; padding:10px 12px; border-radius:12px; border:1px solid var(--border); background:var(--card); cursor:pointer; text-decoration:none; color:var(--text); font-weight:600; justify-content:space-between }
+          .btn-menu{ width:100% }
+          .btn:hover{ box-shadow:0 4px 14px rgba(2,6,23,.10) }
+          html[data-theme="dark"] .btn:hover{ box-shadow:0 6px 20px rgba(0,0,0,.35) }
+        </style>
 </head>
 <body>
 
@@ -1218,8 +1228,14 @@ html[data-theme="dark"] .badge{ display:inline-block; padding:2px 8px; border-ra
           <span class="menu-icon" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
         </button>
         <div class="dropdown" id="menuList" role="menu" aria-label="Menü">
-  <div class="row"><button class="menu-item" data-modal="modalSettings">Einstellungen</button></div>
-  <div class="row"><button class="menu-item" data-modal="modalChangelog">Changelog</button></div>
+  <div class="menu-stack">
+    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalSettings">Einstellungen</a>
+    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalChangelog">Changelog</a>
+    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalLegend">Legende</a>
+    <a href="javascript:void(0)" class="btn btn-menu" data-modal="modalContact">Kontakt</a>
+    <a href="/admin" target="_blank" rel="noopener" class="btn btn-menu">Admin&nbsp;Login</a>
+  </div>
+</div><div class="row"><button class="menu-item" data-modal="modalChangelog">Changelog</button></div>
   <div class="row"><button class="menu-item" data-modal="modalLegend">Legende</button></div>
   <div class="row"><button class="menu-item" data-modal="modalContact">Kontakt</button></div>
   <div class="row"><a href="/admin" target="_blank" rel="noopener" class="btn" style="width:100%">Admin&nbsp;Login</a></div>
