@@ -9,7 +9,7 @@ collections:
   - name: "cards"
     label: "Cards"
     label_singular: "Card"
-    description: "Karten (Websites/Präsentationen), die öffentlich gerendert werden."
+    description: "Karten (Websites/Präsentationen)"
     files:
       - file: "data/cards.json"
         label: "Cards JSON"
@@ -27,5 +27,14 @@ collections:
               - { label: "Typ", name: "type", widget: "select", options: ["website", "presentation"], default: "website" }
               - { label: "Fach/Tag", name: "tag", widget: "select", options: ["philosophie","erdkunde","geschichte","physik","sowi","deutsch","sport","mathe","chemie","informatik"] }
               - { label: "Bild (optional)", name: "image_url", widget: "image", required: false }
+              - label: "Status"
+                name: "status"
+                widget: "select"
+                options:
+                  - { label: "Fertig", value: "fertig" }
+                  - { label: "In Arbeit", value: "in_arbeit" }
+                  - { label: "Test", value: "test" }
+                  - { label: "Coming Soon", value: "coming_soon" }
+                default: "in_arbeit"
               - { label: "Sichtbar", name: "is_published", widget: "boolean", default: true }
               - { label: "Erstellt am", name: "created_at", widget: "datetime", format: "YYYY-MM-DDTHH:mm:ssZ", required: false }
