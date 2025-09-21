@@ -1,3 +1,26 @@
 {
-  "cards": []
+  "cards": [
+    {
+      "created_at": "2025-09-21T20:17:00+02:00",
+      "url": "fdfsfds",
+      "status": "test",
+      "subtitle": "dsfsdfd",
+      "title": "fdsfdsf",
+      "is_published": true,
+      "type": "website",
+      "tag": "erdkunde",
+      "id": "sdadf"
+    },
+    {
+      "created_at": "2025-09-21T20:17:00+02:00",
+      "url": "fdbvdfbdfb",
+      "status": "in_arbeit",
+      "subtitle": "bdfbd",
+      "title": "ffdfbd",
+      "is_published": true,
+      "type": "website",
+      "tag": "geschichte",
+      "id": "fdv fc"
+    }
+  ]
 }
