@@ -855,6 +855,15 @@ html[data-theme="dark"]
 .pill-tag.tag-chemie{ background: var(--tag-chemie) }
 .pill-tag.tag-informatik{ background: var(--tag-informatik) }
 
+
+/* v2.54 – status as small pill button on actions row */
+.card .actions{ display:flex; align-items:center; gap:10px; }
+.status-btn{ margin-left:auto; display:inline-flex; align-items:center; justify-content:center; height:28px; padding:0 10px; border-radius:9999px; font-size:.78rem; font-weight:700; line-height:1; }
+.status-btn.status-done{ background:#22C55E; color:#fff; }
+.status-btn.status-wip{ background:#F59E0B; color:#fff; }
+.status-btn.status-test{ background:#EF4444; color:#fff; }
+.status-btn.status-soon{ background:#64748B; color:#fff; }
+
 </style>
 <style>
 </style>
@@ -1512,7 +1521,13 @@ html[data-theme="dark"] .badge{ display:inline-block; padding:2px 8px; border-ra
 
 <script>
 (function(){
-  function badgeHTML(status){
+  function statusBtnHTML(status){
+  const map={ fertig:['Fertig','status-done'], in_arbeit:['In Arbeit','status-wip'], test:['Test','status-test'], coming_soon:['Coming Soon','status-soon'] };
+  const x=map[status]; if(!x) return '';
+  return `<span class="status-btn ${x[1]}">${x[0]}</span>`;
+}
+
+function badgeHTML(status){
     const m={ fertig:['Fertig','badge-done'], in_arbeit:['In Arbeit','badge-wip'], test:['Test','badge-test'], coming_soon:['Coming Soon','badge-soon'] };
     const x=m[status]; return x?`<span class="badge ${x[1]}">${x[0]}</span>`:'';
   }
@@ -1527,8 +1542,8 @@ html[data-theme="dark"] .badge{ display:inline-block; padding:2px 8px; border-ra
       ${c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:''}
       <h3>${c.title||''}</h3>
       ${c.subtitle?`<p class="muted">${c.subtitle}</p>`:''}
-      <div class="row-tags"><div class="left">${tagPill(tag)}</div><div class="right">${badgeHTML(c.status)}</div></div>
-      <div class="actions"><a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a></div>
+      <div class="row-tags"><div class="left">${tagPill(tag)}</div></div>
+      <div class="actions"><a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a>${statusBtnHTML(c.status)}</div>
     </div>`;
   }
   async function loadCards(){
