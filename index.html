@@ -218,6 +218,35 @@ html[data-theme="dark"] .to-top{ background:rgba(255,255,255,.18); box-shadow:0 
 .info-section h3{ margin:0 0 8px 0; }
 
 /* v2.46 info accents */
+
+/* v2.47 – precise accent + equal FAQ + blue headings */
+:root{ --info-surface:#F1F5FF; --accent-blue:#1D4ED8; }
+html[data-theme="dark"]{ --info-surface:#111827; --accent-blue:#60A5FA; }
+
+/* Info cards look */
+.info-section .box{ background:var(--info-surface); }
+.info-section .box h3{ color:var(--accent-blue); }
+
+/* Accent border that wraps left edge with rounded top/bottom arcs */
+.info-section .box.accent{ border-color:rgba(29,78,216,.25); }
+.info-section .box.accent::before{
+  content:""; position:absolute;
+  left:-2px; top:-2px; bottom:-2px;
+  width:14px;
+  border:2px solid var(--accent-blue);
+  border-right:none;
+  border-top-left-radius:16px;
+  border-bottom-left-radius:16px;
+  box-shadow:0 1px 0 rgba(0,0,0,.04);
+}
+
+/* FAQ equal height + tighter gap */
+.info-section .faq-list{ display:grid; gap:8px; }
+.info-section .faq-item{
+  min-height:120px;
+  display:flex; flex-direction:column; justify-content:center;
+}
+
 .info-section{ max-width:980px; margin:0 auto; }
 .info-section .stack{ display:grid; gap:16px; }
 .info-section .grid2{ display:grid; grid-template-columns:1fr; gap:16px; }
