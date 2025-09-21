@@ -59,13 +59,13 @@
   .section{ padding:22px 0 }
   .info, .improvements, .faq{ max-width: 980px; margin: 0 auto }
   .grid{ display:grid; gap:16px }
-  .card{ position:relative; grid-column:span 12; background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:18px; min-height:180px; display:flex; flex-direction:column; gap:10px; transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease; overflow:hidden }
+  .card{ position:relative; background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:18px; min-height:180px; display:flex; flex-direction:column; gap:10px; transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease; overflow:hidden }
   .card::before{ content:""; position:absolute; left:0; top:0; right:0; height:6px; background:var(--yellow); border-top-left-radius:16px; border-top-right-radius:16px }
   .card--blue::before{ background:var(--lightblue) } .card--brown::before{ background:var(--lightbrown) }
   .card--physik::before{ background:var(--physik) } .card--erdkunde::before{ background:var(--erdkunde) } .card--sowi::before{ background:var(--sowi) } .card--philosophie::before{ background:var(--yellow) } .card--geschichte::before{ background:var(--lightbrown) }
   .card h3{ margin:0; font-size:1.12rem } .card p{ margin:0; color:var(--muted) }
   .project-note{ font-size:.9rem; color:#6B7280 }
-  @media (min-width:680px){ .card{ grid-column:span 6 } }
+  @media (min-width:680px){ .grid .card{ grid-column:span 6 } }
 
   .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px }
   .tag{ font-size:.8rem; border-radius:999px; padding:2px 8px; border:1px solid var(--border) }
@@ -472,7 +472,9 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 </style>
 
 <style>
-.card-grid{ display:grid; grid-template-columns:1fr; gap:16px }
+.card-grid{ display:grid;
+  .card-grid .card{ grid-column:auto }
+ grid-template-columns:1fr; gap:16px }
 @media (min-width:700px){ .card-grid.two-cols{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px } }
 @media (min-width:1100px){ .card-grid.two-cols{ gap:20px } }
 @media (max-width: 640px){ .card-grid.two-cols{ grid-template-columns:1fr } }
