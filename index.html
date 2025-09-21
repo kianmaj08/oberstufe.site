@@ -817,18 +817,43 @@ html[data-theme="dark"] .card{ background:#222831; border-color:#393E46; box-sha
 
 .card .row-tags{ display:flex; align-items:center; justify-content:space-between; margin-top:8px }
 .card .row-tags .left{ display:flex; gap:8px; align-items:center }
-.pill-tag{ display:inline-block; padding:2px 8px; border-radius:999px; font-size:.78rem; background:#fff; border:1px solid currentColor; color:#111 }
-html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-color:#948979 }
+
+html[data-theme="dark"] 
 
 .badge{ display:inline-block; padding:2px 8px; border-radius:999px; font-size:.75rem; }
-.badge-done{ background:#22c55e20; color:#16a34a; border:1px solid #16a34a33 }
-.badge-wip{ background:#f59e0b20; color:#d97706; border:1px solid #d9770633 }
-.badge-test{ background:#6b728020; color:#374151; border:1px solid #37415133 }
-.badge-soon{ background:#ef444420; color:#b91c1c; border:1px solid #b91c1c33 }
+
+
+
+
 
 .card .actions{ margin-top:12px }
 .btn.btn-primary{ display:inline-block; padding:8px 14px; border-radius:10px; background:#e6f0ff; border:1px solid #cfe0ff; text-decoration:none }
 .btn.btn-primary:hover{ filter:brightness(0.98) }
+
+
+/* v2.53 – solid status badges */
+.badge{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:.8rem; font-weight:600; border:none }
+.badge-done{ background:#22C55E; color:#fff; }
+.badge-wip{ background:#F59E0B; color:#fff; }
+.badge-test{ background:#EF4444; color:#fff; }
+.badge-soon{ background:#64748B; color:#fff; } /* neutral for coming soon */
+
+
+/* v2.53 – filled subject tags */
+.pill-tag{ display:inline-block; padding:2px 10px; border-radius:999px; font-size:.8rem; font-weight:600; border:none }
+.pill-tag[class*="tag-"]{ color:#fff }
+.pill-tag.tag-philosophie, .pill-tag.tag-chemie, .pill-tag.tag-kunst{ color:#111 }
+.pill-tag.tag-philosophie{ background: var(--tag-philosophie) }
+.pill-tag.tag-erdkunde{ background: var(--tag-erdkunde) }
+.pill-tag.tag-geschichte{ background: var(--tag-geschichte) }
+.pill-tag.tag-physik{ background: var(--tag-physik) }
+.pill-tag.tag-kunst{ background: var(--tag-kunst) }
+.pill-tag.tag-sowi{ background: var(--tag-sowi) }
+.pill-tag.tag-deutsch{ background: var(--tag-deutsch) }
+.pill-tag.tag-sport{ background: var(--tag-sport) }
+.pill-tag.tag-mathe{ background: var(--tag-mathe) }
+.pill-tag.tag-chemie{ background: var(--tag-chemie) }
+.pill-tag.tag-informatik{ background: var(--tag-informatik) }
 
 </style>
 <style>
