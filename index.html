@@ -1569,7 +1569,15 @@ function badgeHTML(status){
   }
   function cardHTML(c){
     const tag=(c.tag||'').toLowerCase();
-    return `<div class="card card--${tag}">
+    const title = c.title || '';
+    const subtitle = c.subtitle || '';
+    const authors = c.authors || '';
+    const img = c.image_url ? `<img class="card-thumb" src="${c.image_url}" alt="">` : '';
+    const subHTML = subtitle ? `<p class="muted">${subtitle}</p>` : '';
+    const authHTML = authors ? `<p class="muted" style="font-size:.9rem; opacity:.85">${authors}</p>` : '';
+    const actions = `<div class="actions"><a class="btn btn-primary" href="${c.url||'#'}" target="_blank" rel="noopener">Öffnen</a>${statusBtnHTML(c.status)}</div>`;
+    return `<div class="card card--${tag}">${img}<h3>${title}</h3>${subHTML}${authHTML}<div class="row-tags"><div class="left">${tagPill(tag)}</div></div>${actions}</div>`;
+  }">
       ${c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:''}
       <h3>${c.title||''}</h3>
       ${c.subtitle?`<p class="muted">${c.subtitle}</p>`:''}
@@ -1579,7 +1587,18 @@ function badgeHTML(status){
     </div>`;
   }
   async function loadCards(){
-    const r=await fetch('/data/cards.json',{cache:'no-cache'});
+  try{
+    const r = await fetch('/data/cards.json',{cache:'no-cache'});
+    const d = await r.json();
+    let arr = Array.isArray(d) ? d : (Array.isArray(d.cards) ? d.cards : []);
+    // Normalize: default publish=true if undefined
+    arr = arr.filter(c => c && c.is_published !== false);
+    return arr;
+  }catch(e){
+    console && console.error && console.error('cards.json load error', e);
+    return [];
+  }
+});
     const d=await r.json(); return (d.cards||[]).filter(c=>c.is_published!==false);
   }
   function renderWebsites(cards){

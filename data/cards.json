@@ -1,15 +1,3 @@
 {
-  "cards": [
-    {
-      "authors": "Kian Majidian · Basit Rezai · Mark Naujoks",
-      "url": "https://philexikon.netlify.app/",
-      "status": "in_arbeit",
-      "subtitle": "Ein Lexikon für bekannte Philosophen",
-      "title": "Philexikon",
-      "is_published": true,
-      "type": "website",
-      "tag": "philosophie",
-      "id": "philexikon"
-    }
-  ]
+  "cards": []
 }
