@@ -57,6 +57,7 @@
   .search .hint{ color:var(--muted); font-size:.9rem }
 
   .section{ padding:22px 0 }
+  .info, .improvements, .faq{ max-width: 980px; margin: 0 auto }
   .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:16px }
   .card{ position:relative; grid-column:span 12; background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:18px; min-height:180px; display:flex; flex-direction:column; gap:10px; transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease; overflow:hidden }
   .card::before{ content:""; position:absolute; left:0; top:0; right:0; height:6px; background:var(--yellow); border-top-left-radius:16px; border-top-right-radius:16px }
@@ -475,6 +476,20 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
 @media (max-width: 640px){ .card-grid.two-cols{ grid-template-columns:1fr } }
 .card-grid{ grid-auto-flow: row dense; }
 
+  /* TAG PILL COLORS */
+  .pill-tag.tag-philosophie{ color: var(--tag-philosophie) }
+  .pill-tag.tag-erdkunde{ color: var(--tag-erdkunde) }
+  .pill-tag.tag-geschichte{ color: var(--tag-geschichte) }
+  .pill-tag.tag-physik{ color: var(--tag-physik) }
+  .pill-tag.tag-kunst{ color: var(--tag-kunst) }
+  .pill-tag.tag-sowi{ color: var(--tag-sowi) }
+  .pill-tag.tag-deutsch{ color: var(--tag-deutsch) }
+  .pill-tag.tag-sport{ color: var(--tag-sport) }
+  .pill-tag.tag-mathe{ color: var(--tag-mathe) }
+  .pill-tag.tag-chemie{ color: var(--tag-chemie) }
+  .pill-tag.tag-informatik{ color: var(--tag-informatik) }
+
+
 :root{
   --tag-philosophie:#FACC15;
   --tag-erdkunde:#22C55E;
@@ -573,18 +588,36 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
     <div class="container">
       <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
         <h2 data-i18n="grid_title">Unsere Websites</h2>
-        <div style="display:flex; align-items:center; gap:8px;">
-          <label for="sortSelect" class="muted" style="font-size:.95rem;">Sortieren:</label>
-          <select id="sortSelect" class="btn" style="padding:8px 10px;">
-            <option value="standard" selected>Standard</option>
-            <option value="neu">Neueste</option>
-            <option value="az">A–Z</option>
-          </select>
-        </div>
+<div id="websitesGrid" class="card-grid two-cols"></div>
+<h3>Philexikon</h3>
+          <p>Ein Lexikon für bekannte Philosophen.</p>
+          <p class="project-note">Ein Projekt von Kian, Basit und Kamil.</p>
+          <div class="tags"><span class="tag philosophie">Philosophie</span></div>
+          <div class="actions"><a class="ghost" href="https://philexikon.netlify.app/" target="_blank" rel="noopener">Öffnen</a></div>
+          <div class="status yellow" title="In Arbeit">In Arbeit</div>
+        </article>
+
+        <article class="card card--blue" data-title="Pieter Bruegel" data-tags="kunst,bruegel,renaissance">
+          <h3>Pieter Bruegel</h3>
+          <p>Biografie, Kunstwerke und Hintergründe des Renaissance-Malers.</p>
+          <p class="project-note">Ein Projekt von Kian, Basit und Mark.</p>
+          <div class="tags"><span class="tag kunst">Kunst</span></div>
+          <div class="actions"><a class="ghost" href="https://pieterbruegel.netlify.app/" target="_blank" rel="noopener">Öffnen</a></div>
+          <div class="status yellow" title="In Arbeit">In Arbeit</div>
+        </article>
+
+        <article class="card card--brown" data-title="Wiener Kongress" data-tags="geschichte,wien,konferenz,wiener kongress">
+          <h3>Wiener Kongress</h3>
+          <p>Kurzer Überblick zum Wiener Kongress.</p>
+          <p class="project-note">Ein Projekt von Kian, Till, Mark und Danush.</p>
+          <div class="tags"><span class="tag geschichte">Geschichte</span></div>
+          <div class="actions"><a class="ghost" href="https://wienerkongress.netlify.app/" target="_blank" rel="noopener">Öffnen</a></div>
+          <div class="status yellow" title="In Arbeit">In Arbeit</div>
+        </article>
       </div>
-      <div id="websitesGrid" class="card-grid two-cols"></div>
-    </div>
-  </section>
+
+      <div style="text-align:center; font-weight:600; color:#6B7280; margin: 14px 0 0;" data-i18n="more_coming">More coming soon</div>
+
       <div class="info">
         <h3 data-i18n="about_title">Über dieses Projekt</h3>
         <p data-i18n="about_1">Dieses Projekt entstand im Rahmen unserer schulischen Arbeiten. Wir experimentieren mit künstlicher Intelligenz, entwickeln Präsentationen und erstellen Websites, die wir hier auf oberstufe.site veröffentlichen.</p>
@@ -836,27 +869,6 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
   .admin-yes .admin-only{ display:initial }
 </style>
 
-<section><h2>Websites</h2><div id="cardsWebGrid" class="card-grid two-cols"></div></section>
-
-<script>
-(async function(){
-  try{
-    const res = await fetch('/data/cards.json', {cache:'no-cache'});
-    const data = await res.json();
-    const list = (data.cards||[]).filter(c => (c.is_published !== false) && (c.type === 'website'));
-    const el = document.getElementById('cardsWebGrid');
-    if(!el) return;
-    el.innerHTML = list.map(c => `
-      <a class="card card--${c.tag||'default'}" href="${c.url}" target="_blank" rel="noopener">
-        ${c.image_url ? `<img class="card-thumb" src="${c.image_url}" alt="">` : ''}
-        <h3>${c.title}</h3>
-        ${c.subtitle ? `<p class="muted">${c.subtitle}</p>` : ''}
-        <div class="meta"><span class="tag ${c.tag||''}">${c.tag||''}</span><span class="type">${c.type||''}</span></div>
-      </a>
-    `).join('');
-  }catch(e){ console.error('cards load error', e); }
-})();
-</script>
 
 
 
@@ -904,71 +916,6 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
     const cards=await loadCards();
     if(/powerpoints/i.test(location.pathname)) renderPresentations(cards);
     else renderWebsites(cards);
-  });
-})();
-</script>
-
-<script>
-// v2.42 – Menü & Modals
-(function(){
-  const menuBtn = document.getElementById('menuBtn');
-  const menu = document.getElementById('menuList');
-  const overlay = document.getElementById('overlayGlobal');
-
-  function openMenu(){
-    if(!menuBtn || !menu) return;
-    menu.classList.add('open');
-    menuBtn.classList.add('open');
-    menuBtn.setAttribute('aria-expanded','true');
-    overlay && overlay.classList.add('show');
-  }
-  function closeMenu(){
-    if(!menuBtn || !menu) return;
-    menu.classList.remove('open');
-    menuBtn.classList.remove('open');
-    menuBtn.setAttribute('aria-expanded','false');
-    overlay && overlay.classList.remove('show');
-  }
-  function toggleMenu(){ (menu && menu.classList.contains('open')) ? closeMenu() : openMenu(); }
-
-  menuBtn && menuBtn.addEventListener('click', (e)=>{ e.stopPropagation(); toggleMenu(); });
-  document.addEventListener('click', (e)=>{
-    if(menu && !menu.contains(e.target) && !menuBtn.contains(e.target)) closeMenu();
-  });
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
-
-  // Modal helpers
-  function openModal(id){
-    const m = document.getElementById(id);
-    if(!m) return;
-    m.classList.add('open');
-    overlay && overlay.classList.add('show');
-    closeMenu();
-  }
-  function closeModal(id){
-    const m = document.getElementById(id);
-    if(!m) return;
-    m.classList.remove('open');
-    overlay && overlay.classList.remove('show');
-  }
-
-  // Hook menu items
-  const byId = (id)=> document.getElementById(id);
-  const hook = (id, fn)=>{ const el=byId(id); el && el.addEventListener('click', fn); };
-
-  hook('menuOpenSettings', ()=> openModal('modalSettings'));
-  hook('menuOpenChangelog', ()=> openModal('modalChangelog'));
-  hook('menuOpenLegend',   ()=> openModal('modalLegend'));
-  hook('menuOpenContact',  ()=> openModal('modalContact'));
-
-  // Hook close buttons
-  hook('closeSettings', ()=> closeModal('modalSettings'));
-  hook('closeChangelog', ()=> closeModal('modalChangelog'));
-  hook('closeLegend', ()=> closeModal('modalLegend'));
-  hook('closeContact', ()=> closeModal('modalContact'));
-
-  overlay && overlay.addEventListener('click', ()=>{
-    closeModal('modalSettings'); closeModal('modalChangelog'); closeModal('modalLegend'); closeModal('modalContact'); closeMenu();
   });
 })();
 </script>
