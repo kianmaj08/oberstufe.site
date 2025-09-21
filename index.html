@@ -588,60 +588,16 @@ html[data-theme="dark"] .pill-tag{ background:#222831; color:#DFD0B8; border-col
     <div class="container">
       <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:10px;">
         <h2 data-i18n="grid_title">Unsere Websites</h2>
-<div id="websitesGrid" class="card-grid two-cols"></div>
-<h3>Philexikon</h3>
-          <p>Ein Lexikon für bekannte Philosophen.</p>
-          <p class="project-note">Ein Projekt von Kian, Basit und Kamil.</p>
-          <div class="tags"><span class="tag philosophie">Philosophie</span></div>
-          <div class="actions"><a class="ghost" href="https://philexikon.netlify.app/" target="_blank" rel="noopener">Öffnen</a></div>
-          <div class="status yellow" title="In Arbeit">In Arbeit</div>
-        </article>
-
-        <article class="card card--blue" data-title="Pieter Bruegel" data-tags="kunst,bruegel,renaissance">
-          <h3>Pieter Bruegel</h3>
-          <p>Biografie, Kunstwerke und Hintergründe des Renaissance-Malers.</p>
-          <p class="project-note">Ein Projekt von Kian, Basit und Mark.</p>
-          <div class="tags"><span class="tag kunst">Kunst</span></div>
-          <div class="actions"><a class="ghost" href="https://pieterbruegel.netlify.app/" target="_blank" rel="noopener">Öffnen</a></div>
-          <div class="status yellow" title="In Arbeit">In Arbeit</div>
-        </article>
-
-        <article class="card card--brown" data-title="Wiener Kongress" data-tags="geschichte,wien,konferenz,wiener kongress">
-          <h3>Wiener Kongress</h3>
-          <p>Kurzer Überblick zum Wiener Kongress.</p>
-          <p class="project-note">Ein Projekt von Kian, Till, Mark und Danush.</p>
-          <div class="tags"><span class="tag geschichte">Geschichte</span></div>
-          <div class="actions"><a class="ghost" href="https://wienerkongress.netlify.app/" target="_blank" rel="noopener">Öffnen</a></div>
-          <div class="status yellow" title="In Arbeit">In Arbeit</div>
-        </article>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <label for="sortSelect" class="muted" style="font-size:.95rem;">Sortieren:</label>
+          <select id="sortSelect" class="btn" style="padding:8px 10px;">
+            <option value="standard" selected>Standard</option>
+            <option value="neu">Neueste</option>
+            <option value="az">A–Z</option>
+          </select>
+        </div>
       </div>
-
-      <div style="text-align:center; font-weight:600; color:#6B7280; margin: 14px 0 0;" data-i18n="more_coming">More coming soon</div>
-
-      <div class="info">
-        <h3 data-i18n="about_title">Über dieses Projekt</h3>
-        <p data-i18n="about_1">Dieses Projekt entstand im Rahmen unserer schulischen Arbeiten. Wir experimentieren mit künstlicher Intelligenz, entwickeln Präsentationen und erstellen Websites, die wir hier auf oberstufe.site veröffentlichen.</p>
-        <p data-i18n="about_2">Unsere Seiten werden mit Hilfe von <a class="link" href="https://www.netlify.com/" target="_blank" rel="noopener">Netlify</a> gehostet, während die Domain über <a class="link" href="https://www.squarespace.com/" target="_blank" rel="noopener">Squarespace</a> verwaltet wird.</p>
-        <p data-i18n="about_3">Bitte beachten Sie: Die Websites sind noch nicht vollendet. Inhalte und Gestaltung können sich jederzeit ändern.</p>
-        <p data-i18n="about_4">Bei Fragen oder Ideen können Sie uns gerne unter <a class="mail" href="mailto:oberstufesite@gmail.com">oberstufesite@gmail.com</a> erreichen.</p>
-      </div>
-
-      <div class="improvements">
-        <h3 data-i18n="improv_title">Geplante Verbesserungen</h3>
-        <ul>
-          <li><strong>Optimierungen der Homepage</strong> – Verbesserung von Struktur, Design und Benutzerfreundlichkeit.</li>
-          <li><strong>Integration von Bildern</strong> – Ergänzung passender Abbildungen sowohl auf der Philexikon-Seite als auch auf der Pieter-Bruegel-Seite.</li>
-        </ul>
-      </div>
-
-      <div class="faq">
-        <h3 data-i18n="faq_title">FAQ</h3>
-        <div class="faq-item"><strong data-i18n="faq_q1">Was ist oberstufe.site?</strong><p data-i18n="faq_a1">oberstufe.site ist unsere zentrale Startseite, die alle Schülerprojekte bündelt.</p></div>
-        <div class="faq-item"><strong data-i18n="faq_q2">Warum gibt es mehrere Websites?</strong><p data-i18n="faq_a2">Jedes Projekt hat ein eigenes Thema (z. B. <span class='kw-philosophie'>Philosophie</span>, <span class='kw-kunst'>Kunst</span>, <span class='kw-geschichte'>Geschichte</span>) und wird deshalb auf einer eigenen Website präsentiert.</p></div>
-        <div class="faq-item"><strong data-i18n="faq_q3">Sind die Inhalte schon final?</strong><p data-i18n="faq_a3">Nein – alle Projekte sind noch in Arbeit. Inhalte und Design können sich jederzeit ändern.</p></div>
-        <div class="faq-item"><strong data-i18n="faq_q4">Wie werden die Seiten betrieben?</strong><p data-i18n="faq_a4">Unsere Websites laufen über <a class='link' href='https://www.netlify.com/' target='_blank' rel='noopener'>Netlify</a>, die Domain wird über <a class='link' href='https://www.squarespace.com/' target='_blank' rel='noopener'>Squarespace</a> verwaltet.</p></div>
-        <div class="faq-item"><strong data-i18n="faq_q5">Kann ich Feedback geben oder Ideen einreichen?</strong><p data-i18n="faq_a5">Ja, gerne per E-Mail an <a class='link' href='mailto:oberstufesite@gmail.com'>oberstufesite@gmail.com</a> oder über unser <a class='link' href='https://docs.google.com/forms/d/e/1FAIpQLSc7hitAkvgDHXnOKgRpvolibMhm3iHeag_V-Azm4Mz8zef63w/viewform?usp=dialog' target='_blank' rel='noopener'>Feedback-Formular</a>.</p></div>
-      </div>
+      <div id="websitesGrid" class="card-grid two-cols"></div>
     </div>
   </section>
 
