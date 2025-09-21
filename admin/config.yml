@@ -17,11 +17,12 @@ collections:
           - label: "Cards"
             name: "cards"
             widget: "list"
-            summary: "{{fields.title}} ({{fields.tag}})"
+            summary: "{{fields.title}} ({{fields.tag}}) — {{fields.authors}}"
             fields:
               - { label: "ID", name: "id", widget: "string" }
               - { label: "Titel", name: "title", widget: "string" }
               - { label: "Untertitel", name: "subtitle", widget: "string", required: false }
+              - { label: "Autoren", name: "authors", widget: "string", required: false, hint: "z. B. Kian Majidian · Basit Rezai · Mark Naujoks" }
               - { label: "URL", name: "url", widget: "string" }
               - { label: "Typ", name: "type", widget: "select", options: ["website","presentation"], default: "website" }
               - { label: "Fach/Tag", name: "tag", widget: "select", options: ["philosophie","erdkunde","geschichte","physik","kunst","sowi","deutsch","sport","mathe","chemie","informatik"] }
