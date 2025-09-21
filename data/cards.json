@@ -1,3 +1,15 @@
 {
-  "cards": []
+  "cards": [
+    {
+      "authors": "Ein Projekt von Kian, Basit und Kamil.",
+      "url": "https://philexikon.netlify.app/",
+      "status": "in_arbeit",
+      "subtitle": "Ein Lexikon für bekannte Philosophen",
+      "title": "Philexikon",
+      "is_published": true,
+      "type": "website",
+      "tag": "philosophie",
+      "id": "philexikon"
+    }
+  ]
 }
