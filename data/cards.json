@@ -1,3 +1,47 @@
 {
-  "cards": []
+  "cards": [
+    {
+      "created_at": "2025-09-21T21:56:00+02:00",
+      "url": "dfgh",
+      "status": "in_arbeit",
+      "subtitle": "dfghj",
+      "title": "dfghjk",
+      "is_published": true,
+      "type": "website",
+      "tag": "erdkunde",
+      "id": "asdfghj"
+    },
+    {
+      "created_at": "2025-09-21T21:56:00+02:00",
+      "url": "dfgbvcd",
+      "status": "test",
+      "subtitle": "sxdcfvgbnbv",
+      "title": "gfdfgh",
+      "is_published": true,
+      "type": "website",
+      "tag": "geschichte",
+      "id": "lkjhgf"
+    },
+    {
+      "type": "website",
+      "status": "fertig",
+      "is_published": true,
+      "id": "ddfghjkl",
+      "title": "poiuwertz",
+      "subtitle": "rtzhj",
+      "url": "dfghj",
+      "tag": "philosophie"
+    },
+    {
+      "created_at": "2025-09-21T21:57:00+02:00",
+      "url": "srxdtgfh",
+      "status": "coming_soon",
+      "subtitle": "werstdz",
+      "title": "ijkhfd",
+      "is_published": true,
+      "type": "website",
+      "tag": "deutsch",
+      "id": "äö.l,kjhg"
+    }
+  ]
 }
