@@ -1659,5 +1659,30 @@ function badgeHTML(status){
 })();
 </script>
 
+
+<script>
+// v2.58 – global modal open/close fallback
+(function(){
+  if(!window._openModal){
+    window._openModal = function(id){
+      var m=document.getElementById(id);
+      var overlay=document.getElementById('overlayGlobal');
+      if(m){ m.classList.add('open'); }
+      if(overlay){ overlay.classList.add('show'); }
+      var btn=document.getElementById('menuBtn'); var list=document.getElementById('menuList');
+      if(list && list.classList.contains('open')){ list.classList.remove('open'); btn && btn.classList.remove('open'); }
+    };
+  }
+  if(!window._closeModal){
+    window._closeModal = function(id){
+      var m=document.getElementById(id);
+      var overlay=document.getElementById('overlayGlobal');
+      if(m){ m.classList.remove('open'); }
+      if(overlay){ overlay.classList.remove('show'); }
+    };
+  }
+})();
+</script>
+
 </body>
 </html>
