@@ -296,14 +296,14 @@ html[data-theme="dark"] .info-section .box{ background:#222831; border-color:#39
   .search .hint{ color:var(--muted); font-size:.9rem }
 
   .section{ padding:22px 0 }
-  .grid{ display:grid; grid-template-columns:repeat(12,1fr); gap:16px }
-  .card{ position:relative; grid-column:span 12; background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:18px; min-height:180px; display:flex; flex-direction:column; gap:10px; transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease; overflow:hidden }
+  .grid{ display:grid; gap:16px }
+  .card{ position:relative; background:var(--card); border:1px solid var(--border); border-radius:16px; box-shadow:var(--shadow); padding:18px; min-height:180px; display:flex; flex-direction:column; gap:10px; transition:transform .15s ease, box-shadow .2s ease, border-color .2s ease; overflow:hidden }
   .card::before{ content:""; position:absolute; left:0; top:0; right:0; height:6px; background:var(--yellow); border-top-left-radius:16px; border-top-right-radius:16px }
   .card--blue::before{ background:var(--lightblue) } .card--brown::before{ background:var(--lightbrown) }
   .card--physik::before{ background:var(--physik) } .card--erdkunde::before{ background:var(--erdkunde) } .card--sowi::before{ background:var(--sowi) } .card--philosophie::before{ background:var(--yellow) } .card--geschichte::before{ background:var(--lightbrown) }
   .card h3{ margin:0; font-size:1.12rem } .card p{ margin:0; color:var(--muted) }
   .project-note{ font-size:.9rem; color:#6B7280 }
-  @media (min-width:680px){ .card{ grid-column:span 6 } }
+  @media (min-width:680px){ .grid .card{ grid-column:span 6 } }
 
   .tags{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px }
   .tag{ font-size:.8rem; border-radius:999px; padding:2px 8px; border:1px solid var(--border) }
