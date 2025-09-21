@@ -881,6 +881,9 @@ html[data-theme="dark"]
 .header .right, header .right{ position:relative }
 
 .modal.open{ display:flex }
+/* ultra menu clickability */
+.menu-btn{ position:relative; z-index:500; pointer-events:auto }
+#menuList{ z-index:480; }
 </style>
 <style>
 </style>
@@ -1215,10 +1218,10 @@ html[data-theme="dark"] .badge{ display:inline-block; padding:2px 8px; border-ra
           <span class="menu-icon" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
         </button>
         <div class="dropdown" id="menuList" role="menu" aria-label="Menü">
-          <div class="row"><a href="javascript:void(0)" id="menuOpenSettings" class="btn" style="width:100%" data-i18n="settings_title" href="#settings" onclick="_openModal(\'modalSettings\');return false;">Einstellungen</a></div>
-          <div class="row"><a href="javascript:void(0)" id="menuOpenChangelog" class="btn" style="width:100%" data-i18n="open_changelog" href="#changelog" onclick="_openModal(\'modalChangelog\');return false;">Changelog</a></div>
-          <div class="row"><a href="javascript:void(0)" id="menuOpenLegend" class="btn" style="width:100%" href="#legend" onclick="_openModal(\'modalLegend\');return false;">Legende</a></div>
-          <div class="row"><a href="javascript:void(0)" id="menuOpenContact" class="btn" style="width:100%" data-i18n="open_contact" href="#contact" onclick="_openModal(\'modalContact\');return false;">Kontakt</a></div>
+          <div class="row"><a href="javascript:void(0)" id="menuOpenSettings" href="#modalSettings" onclick="document.getElementById('modalSettings').classList.add('open'); var ov=document.getElementById('overlayGlobal'); if(ov) ov.classList.add('show'); return false;">Einstellungen</a></div>
+          <div class="row"><a href="javascript:void(0)" id="menuOpenChangelog" href="#modalChangelog" onclick="document.getElementById('modalChangelog').classList.add('open'); var ov=document.getElementById('overlayGlobal'); if(ov) ov.classList.add('show'); return false;">Changelog</a></div>
+          <div class="row"><a href="javascript:void(0)" id="menuOpenLegend" href="#modalLegend" onclick="document.getElementById('modalLegend').classList.add('open'); var ov=document.getElementById('overlayGlobal'); if(ov) ov.classList.add('show'); return false;">Legende</a></div>
+          <div class="row"><a href="javascript:void(0)" id="menuOpenContact" href="#modalContact" onclick="document.getElementById('modalContact').classList.add('open'); var ov=document.getElementById('overlayGlobal'); if(ov) ov.classList.add('show'); return false;">Kontakt</a></div>
           <div class="row"><a href="/admin" target="_blank" rel="noopener" class="btn" style="width:100%">Admin&nbsp;Login</a></div>
         </div>
       </div>
