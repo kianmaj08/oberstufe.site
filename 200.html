@@ -444,8 +444,12 @@ html[data-theme="dark"] .feedback-card a { color:#60a5fa !important; }
           <span class="menu-icon" aria-hidden="true"><span class="bar"></span><span class="bar"></span><span class="bar"></span></span>
         </button>
         <div class="dropdown" id="menuList" role="menu" aria-label="Menü">
-          <div class="row"><a href="javascript:void(0)" id="menuOpenSettings" class="btn" style="width:100%" data-i18n="settings_title">Einstellungen</a></div>
-          <div class="row"><a href="javascript:void(0)" id="menuOpenChangelog" class="btn" style="width:100%" data-i18n="open_changelog">Changelog</a></div>
+  <div class="row"><button class="menu-item" data-modal="modalSettings">Einstellungen</button></div>
+  <div class="row"><button class="menu-item" data-modal="modalChangelog">Changelog</button></div>
+  <div class="row"><button class="menu-item" data-modal="modalLegend">Legende</button></div>
+  <div class="row"><button class="menu-item" data-modal="modalContact">Kontakt</button></div>
+  <div class="row"><a href="/admin" target="_blank" rel="noopener" class="btn" style="width:100%">Admin&nbsp;Login</a></div>
+</div><div class="row"><a href="javascript:void(0)" id="menuOpenChangelog" class="btn" style="width:100%" data-i18n="open_changelog">Changelog</a></div>
           <div class="row"><a href="javascript:void(0)" id="menuOpenLegend" class="btn" style="width:100%">Legende</a></div>
           <div class="row"><a href="javascript:void(0)" id="menuOpenContact" class="btn" style="width:100%" data-i18n="open_contact">Kontakt</a></div>
         </div>
@@ -1175,5 +1179,51 @@ const langDe=document.getElementById('langDe'); const langEn=document.getElement
   .admin-yes .admin-only{ display:initial }
 </style>
 
+<script>
+// v2.70 Menu + Modals + Theme
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  const overlay = document.getElementById('overlayGlobal');
+
+  function openMenu(){ if(list){ list.classList.add('open'); } if(btn){ btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); } }
+  function closeMenu(){ if(list){ list.classList.remove('open'); } if(btn){ btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); } }
+
+  btn && btn.addEventListener('click', (e)=>{ e.stopPropagation(); list && (list.classList.contains('open')?closeMenu():openMenu()); });
+
+  document.addEventListener('click', (e)=>{
+    if(list && !list.contains(e.target) && !btn.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape'){ closeMenu(); closeAllModals(); }});
+
+  // Modals
+  const modals = Array.from(document.querySelectorAll('.modal'));
+  function closeAllModals(){ modals.forEach(m=>m.classList.remove('open')); overlay && overlay.classList.remove('show'); }
+  function openModal(id){ closeMenu(); const m=document.getElementById(id); if(m){ m.classList.add('open'); overlay && overlay.classList.add('show'); } }
+
+  document.querySelectorAll('#menuList [data-modal]').forEach(el=>{
+    el.addEventListener('click', ()=> openModal(el.getAttribute('data-modal')));
+  });
+  overlay && overlay.addEventListener('click', closeAllModals);
+  document.querySelectorAll('[data-close]').forEach(x=> x.addEventListener('click', closeAllModals));
+
+  // Theme
+  function setTheme(next){
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next);}catch(e){}
+    const tL=document.getElementById('themeLight'); const tD=document.getElementById('themeDark');
+    tL && tL.classList.toggle('active', next==='light');
+    tD && tD.classList.toggle('active', next==='dark');
+  }
+  const saved = (function(){
+    try{ return localStorage.getItem('theme'); }catch(e){ return null; }
+  })() || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark':'light');
+  setTheme(saved);
+
+  const tL=document.getElementById('themeLight'); const tD=document.getElementById('themeDark');
+  tL && tL.addEventListener('click', ()=> setTheme('light'));
+  tD && tD.addEventListener('click', ()=> setTheme('dark'));
+})();
+</script>
 </body>
 </html>
