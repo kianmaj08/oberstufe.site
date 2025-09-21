@@ -1552,17 +1552,19 @@ html[data-theme="dark"] .badge{ display:inline-block; padding:2px 8px; border-ra
 
 <script>
 (function(){
+  <script>
+// v3.0 cards renderer (clean)
+(function(){
   function statusBtnHTML(status){
-  const map={ fertig:['Fertig','status-done'], in_arbeit:['In Arbeit','status-wip'], test:['Test','status-test'], coming_soon:['Coming Soon','status-soon'] };
-  const x=map[status]; if(!x) return '';
-  return `<span class="status-btn ${x[1]}">${x[0]}</span>`;
-}
-
-function badgeHTML(status){
-    const m={ fertig:['Fertig','badge-done'], in_arbeit:['In Arbeit','badge-wip'], test:['Test','badge-test'], coming_soon:['Coming Soon','badge-soon'] };
+    const map={ fertig:['Fertig','status-done'], in_arbeit:['In Arbeit','status-work'], test:['Test','status-test'], coming_soon:['Coming Soon','status-soon'] };
+    const x=map[status]; return x?`<span class="status-btn ${x[1]}">${x[0]}</span>`:'';
+  }
+  function badgeHTML(status){
+    const m={ fertig:['Fertig','badge-done'], in_arbeit:['In Arbeit','badge-work'], test:['Test','badge-test'], coming_soon:['Coming Soon','badge-soon'] };
     const x=m[status]; return x?`<span class="badge ${x[1]}">${x[0]}</span>`:'';
   }
   function tagPill(tag){
+    tag = (tag||'').toLowerCase();
     if(!tag) return '';
     const label = (tag==='sowi'?'SoWi':tag.charAt(0).toUpperCase()+tag.slice(1));
     return `<span class="pill-tag tag-${tag}">${label}</span>`;
@@ -1577,33 +1579,25 @@ function badgeHTML(status){
     const authHTML = authors ? `<p class="muted" style="font-size:.9rem; opacity:.85">${authors}</p>` : '';
     const actions = `<div class="actions"><a class="btn btn-primary" href="${c.url||'#'}" target="_blank" rel="noopener">Öffnen</a>${statusBtnHTML(c.status)}</div>`;
     return `<div class="card card--${tag}">${img}<h3>${title}</h3>${subHTML}${authHTML}<div class="row-tags"><div class="left">${tagPill(tag)}</div></div>${actions}</div>`;
-  }">
-      ${c.image_url?`<img class="card-thumb" src="${c.image_url}" alt="">`:''}
-      <h3>${c.title||''}</h3>
-      ${c.subtitle?`<p class="muted">${c.subtitle}</p>`:''}
-      ${c.authors?`<p class="muted" style="font-size:.9rem; opacity:.85">${c.authors}</p>`:\'\'}
-      <div class="row-tags"><div class="left">${tagPill(tag)}</div></div>
-      <div class="actions"><a class="btn btn-primary" href="${c.url}" target="_blank" rel="noopener">Öffnen</a>${statusBtnHTML(c.status)}</div>
-    </div>`;
   }
   async function loadCards(){
-  try{
-    const r = await fetch('/data/cards.json',{cache:'no-cache'});
-    const d = await r.json();
-    let arr = Array.isArray(d) ? d : (Array.isArray(d.cards) ? d.cards : []);
-    // Normalize: default publish=true if undefined
-    arr = arr.filter(c => c && c.is_published !== false);
-    return arr;
-  }catch(e){
-    console && console.error && console.error('cards.json load error', e);
+    // Try relative first (works in subpaths), fallback to absolute
+    const paths = ['data/cards.json','/data/cards.json'];
+    for(const p of paths){
+      try{
+        const r = await fetch(p, {cache:'no-cache'});
+        if(!r.ok) continue;
+        const d = await r.json();
+        let arr = Array.isArray(d) ? d : (Array.isArray(d.cards) ? d.cards : []);
+        arr = arr.filter(c => c && (c.is_published !== false && String(c.is_published).toLowerCase() !== 'false'));
+        return arr;
+      }catch(e){ /* try next */ }
+    }
     return [];
-  }
-});
-    const d=await r.json(); return (d.cards||[]).filter(c=>c.is_published!==false);
   }
   function renderWebsites(cards){
     const grid=document.getElementById('websitesGrid'); if(!grid) return;
-    const webs=cards.filter(c=>(c.type||'')==='website');
+    const webs=cards.filter(c=> ((c.type||'').toLowerCase()||'')==='website');
     if(webs.length===0){
       grid.innerHTML = `<div class="empty" style="padding:28px; text-align:center; color:var(--muted); border:1px dashed var(--border); border-radius:14px;">Noch keine Karten vorhanden.</div>`;
     } else {
@@ -1611,83 +1605,21 @@ function badgeHTML(status){
     }
   }
   function renderPresentations(cards){
-    const pres=cards.filter(c=>(c.type||'')==='presentation');
+    const pres=cards.filter(c=> ((c.type||'').toLowerCase()||'')==='presentation');
     document.querySelectorAll('[data-tag]').forEach(grid=>{
       const tag=(grid.getAttribute('data-tag')||'').toLowerCase();
       const items=pres.filter(c=>(c.tag||'').toLowerCase()===tag);
-      if(items.length===0){
-        grid.innerHTML = `<div class="empty" style="padding:18px; text-align:center; color:var(--muted); border:1px dashed var(--border); border-radius:12px;">Noch keine Präsentationen</div>`;
-      } else {
-        grid.innerHTML = items.map(cardHTML).join('');
-      }
+      grid.innerHTML = items.length ? items.map(cardHTML).join('') :
+        `<div class="empty" style="padding:18px; text-align:center; color:var(--muted); border:1px dashed var(--border); border-radius:12px;">Noch keine Präsentationen</div>`;
     });
   }
   document.addEventListener('DOMContentLoaded', async ()=>{
-    const cards=await loadCards();
+    const cards = await loadCards();
     if(/powerpoints/i.test(location.pathname)) renderPresentations(cards);
     else renderWebsites(cards);
   });
 })();
-</script>
-
-
-<script>
-
-<script>
-
-
-
-
-<script>
-// v2.52 – menu toggle (no overlay), modals use overlay
-(function(){
-  const btn = document.getElementById('menuBtn');
-  const list = document.getElementById('menuList');
-  const overlay = document.getElementById('overlayGlobal');
-  if(!btn || !list) return;
-
-  function openMenu(){
-    list.classList.add('open');
-    btn.classList.add('open');
-    btn.setAttribute('aria-expanded','true');
-  }
-  function closeMenu(){
-    list.classList.remove('open');
-    btn.classList.remove('open');
-    btn.setAttribute('aria-expanded','false');
-  }
-  function toggleMenu(){ list.classList.contains('open') ? closeMenu() : openMenu(); }
-
-  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggleMenu(); });
-  document.addEventListener('click', (e)=>{
-    if(!list.contains(e.target) && !btn.contains(e.target)) closeMenu();
-  });
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeMenu(); });
-
-  // Modal helpers use overlay
-  const hook=(id, fn)=>{ const el=document.getElementById(id); if(el) el.addEventListener('click', fn); };
-  const openModal=(id)=>{ const m=document.getElementById(id); if(m){ m.classList.add('open'); overlay && overlay.classList.add('show'); closeMenu(); } };
-  const closeModal=(id)=>{ const m=document.getElementById(id); if(m){ m.classList.remove('open'); overlay && overlay.classList.remove('show'); } };
-
-  hook('menuOpenSettings', ()=> openModal('modalSettings'));
-  hook('menuOpenChangelog', ()=> openModal('modalChangelog'));
-  hook('menuOpenLegend',   ()=> openModal('modalLegend'));
-  hook('menuOpenContact',  ()=> openModal('modalContact'));
-
-  hook('closeSettings', ()=> closeModal('modalSettings'));
-  hook('closeChangelog', ()=> closeModal('modalChangelog'));
-  hook('closeLegend', ()=> closeModal('modalLegend'));
-  hook('closeContact', ()=> closeModal('modalContact'));
-
-  overlay && overlay.addEventListener('click', ()=>{
-    closeModal('modalSettings'); closeModal('modalChangelog'); closeModal('modalLegend'); closeModal('modalContact');
-  });
-})();
-</script>
-
-
-<script>
-// v2.56 – minimal toggle fallback
+</script>// v2.56 – minimal toggle fallback
 (function(){
   const btn = document.getElementById('menuBtn');
   const list = document.getElementById('menuList');
