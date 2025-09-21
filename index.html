@@ -871,6 +871,15 @@ html[data-theme="dark"]
 .menu-btn{ position:relative; z-index:150; pointer-events:auto }
 .dropdown{ z-index:140 }
 
+
+/* v2.56 – explicit menuList visibility + positioning */
+#menuList{ display:none; position:absolute; top:60px; right:20px; background:var(--card,#fff); border:1px solid var(--border,#e5e7eb); border-radius:12px; box-shadow:0 10px 24px rgba(0,0,0,.15); min-width:260px; z-index:200; overflow:hidden }
+#menuList.open{ display:block }
+
+
+/* ensure header right area anchors the dropdown properly */
+.header .right, header .right{ position:relative }
+
 </style>
 <style>
 </style>
@@ -1630,6 +1639,22 @@ function badgeHTML(status){
   overlay && overlay.addEventListener('click', ()=>{
     closeModal('modalSettings'); closeModal('modalChangelog'); closeModal('modalLegend'); closeModal('modalContact');
   });
+})();
+</script>
+
+
+<script>
+// v2.56 – minimal toggle fallback
+(function(){
+  const btn = document.getElementById('menuBtn');
+  const list = document.getElementById('menuList');
+  if(!btn || !list) return;
+  const open = ()=>{ list.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); };
+  const close = ()=>{ list.classList.remove('open'); btn.classList.remove('open'); btn.setAttribute('aria-expanded','false'); };
+  const toggle = ()=> list.classList.contains('open') ? close() : open();
+  btn.addEventListener('click', (e)=>{ e.stopPropagation(); toggle(); });
+  document.addEventListener('click', (e)=>{ if(!list.contains(e.target) && !btn.contains(e.target)) close(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') close(); });
 })();
 </script>
 
