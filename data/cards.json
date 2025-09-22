@@ -40,6 +40,16 @@
       "subtitle": "Eine Hochentwickelte Ai aus Azerbaidjan",
       "url": "https://chatbbc.netlify.app/",
       "tag": "informatik"
+    },
+    {
+      "type": "website",
+      "status": "test",
+      "is_published": true,
+      "id": "Stochastosino",
+      "title": "Stochastosino Beta",
+      "subtitle": "Stochastik basierte Mathematik Spiele",
+      "url": "https://strong-gingersnap-16f189.netlify.app/",
+      "tag": "mathe"
     }
   ]
 }
