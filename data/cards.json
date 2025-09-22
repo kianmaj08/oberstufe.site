@@ -32,14 +32,15 @@
       "tag": "geschichte"
     },
     {
-      "type": "website",
-      "status": "fertig",
-      "is_published": true,
-      "id": "Nigga",
-      "title": "nigga Ai Layer Chain v4",
-      "subtitle": "from niggers for niggers",
+      "image_url": "/assets/uploads/img_4687.jpeg",
       "url": "https://nolur.com/",
-      "tag": "informatik"
+      "status": "fertig",
+      "subtitle": "from niggers for niggers",
+      "title": "nigga Ai Layer Chain v4",
+      "is_published": true,
+      "type": "website",
+      "tag": "informatik",
+      "id": "Nigga"
     }
   ]
 }
