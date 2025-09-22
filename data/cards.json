@@ -41,6 +41,16 @@
       "type": "website",
       "tag": "informatik",
       "id": "Nigga"
+    },
+    {
+      "type": "website",
+      "status": "fertig",
+      "is_published": true,
+      "id": "Closedai",
+      "title": "ClosedAi - ChatBBC",
+      "subtitle": "Eine Hochentwickelte Ai aus Azerbaidjan",
+      "url": "https://chatbbc.netlify.app/",
+      "tag": "informatik"
     }
   ]
 }
