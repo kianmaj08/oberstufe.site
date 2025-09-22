@@ -60,6 +60,16 @@
       "subtitle": "(Claude Labs Test)",
       "url": "https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/9acebe6b9610174b979cc5303462dd81/73790f78-a61c-451b-9a21-5cb77b830f76/index.html",
       "tag": "informatik"
+    },
+    {
+      "type": "website",
+      "status": "in_arbeit",
+      "is_published": true,
+      "id": "physik23432",
+      "title": "Physik Q1",
+      "subtitle": "Alle Themen des Physik Gk´s in der Q1",
+      "url": "https://physikgk.netlify.app/",
+      "tag": "physik"
     }
   ]
 }
