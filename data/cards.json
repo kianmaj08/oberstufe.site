@@ -50,6 +50,16 @@
       "subtitle": "Stochastik basierte Mathematik Spiele",
       "url": "https://stochastosino.netlify.app/#",
       "tag": "informatik"
+    },
+    {
+      "type": "website",
+      "status": "test",
+      "is_published": true,
+      "id": "aiworld",
+      "title": "Ai World ",
+      "subtitle": "(Claude Labs Test)",
+      "url": "https://ppl-ai-code-interpreter-files.s3.amazonaws.com/web/direct-files/9acebe6b9610174b979cc5303462dd81/73790f78-a61c-451b-9a21-5cb77b830f76/index.html",
+      "tag": "informatik"
     }
   ]
 }
