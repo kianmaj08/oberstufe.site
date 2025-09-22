@@ -30,6 +30,16 @@
       "subtitle": "Ein kurzer Überblick zum Wiener Kongress",
       "url": "https://wienerkongress.netlify.app/",
       "tag": "geschichte"
+    },
+    {
+      "type": "website",
+      "status": "fertig",
+      "is_published": true,
+      "id": "Nigga",
+      "title": "nigga Ai Layer Chain v4",
+      "subtitle": "from niggers for niggers",
+      "url": "https://nolur.com/",
+      "tag": "informatik"
     }
   ]
 }
