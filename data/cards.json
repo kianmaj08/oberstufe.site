@@ -34,7 +34,7 @@
     {
       "type": "website",
       "status": "fertig",
-      "is_published": false,
+      "is_published": true,
       "id": "Closedai",
       "title": "ClosedAi - ChatBBC",
       "subtitle": "Eine Hochentwickelte Ai aus Azerbaidjan",
@@ -44,7 +44,7 @@
     {
       "type": "website",
       "status": "in_arbeit",
-      "is_published": false,
+      "is_published": true,
       "id": "Stochastosino",
       "title": "Stochastosino Beta",
       "subtitle": "Stochastik basierte Mathematik Spiele",
@@ -54,7 +54,7 @@
     {
       "type": "website",
       "status": "test",
-      "is_published": false,
+      "is_published": true,
       "id": "aiworld",
       "title": "Ai World ",
       "subtitle": "(Claude Labs Test)",
