@@ -70,6 +70,16 @@
       "subtitle": "Alle Themen des Physik Gk´s in der Q1",
       "url": "https://physikgk.netlify.app/",
       "tag": "physik"
+    },
+    {
+      "type": "website",
+      "status": "test",
+      "is_published": true,
+      "id": "643",
+      "title": "NeueHomepageDesignTest1",
+      "subtitle": "test",
+      "url": "https://newoberstufe.netlify.app/",
+      "tag": "informatik"
     }
   ]
 }
